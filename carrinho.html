@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Carrinho de Compras - Tui Tecnologia">
+    <title>Carrinho - Tui Tecnologia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .cart-container {
+            padding: var(--spacing-xl) 0;
+            min-height: 60vh;
+        }
+        
+        .cart-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-lg);
+        }
+        
+        .cart-items {
+            background: var(--bg-white);
+            border-radius: 10px;
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 80px 1fr auto;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .item-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .item-details h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .item-details p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .item-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .item-actions {
+            text-align: right;
+        }
+        
+        .remove-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all var(--transition-fast);
+            margin-top: 0.5rem;
+        }
+        
+        .remove-btn:hover {
+            background: #c0392b;
+        }
+        
+        .cart-summary {
+            background: var(--bg-white);
+            border-radius: 10px;
+            padding: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+        
+        .summary-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-dark);
+        }
+        
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .summary-row:last-of-type {
+            border-bottom: 2px solid var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding-top: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .discount-badge {
+            background: #27ae60;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            margin-top: var(--spacing-md);
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .continue-shopping {
+            width: 100%;
+            margin-top: var(--spacing-sm);
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .continue-shopping:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: var(--spacing-xl);
+        }
+        
+        .empty-cart i {
+            font-size: 5rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .empty-cart h2 {
+            color: var(--text-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .empty-cart p {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        @media (max-width: 968px) {
+            .cart-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cart-summary {
+                position: static;
+            }
+            
+            .cart-item {
+                grid-template-columns: 60px 1fr;
+                gap: var(--spacing-sm);
+            }
+            
+            .item-actions {
+                grid-column: 1 / -1;
+                text-align: left;
+                margin-top: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>TUI <span>Tecnologia</span></h1>
+                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><i class="fas fa-shopping-cart"></i> Meu Carrinho</h1>
+            <p>Revise seus produtos e finalize sua compra</p>
+        </div>
+    </section>
+
+    <!-- Cart Content -->
+    <section class="cart-container">
+        <div class="container">
+            <div class="cart-content" id="cartContent">
+                <!-- Content will be loaded via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TUI Tecnologia</h3>
+                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
+                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
+                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
+                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@tuitecnologia.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 0000-0000</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

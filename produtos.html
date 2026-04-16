@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marketplace de produtos Kaspersky - Tui Tecnologia. Antivírus, segurança digital e proteção empresarial.">
+    <title>Produtos Kaspersky - Tui Tecnologia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>TUI <span>Tecnologia</span></h1>
+                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html" class="active">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li>
+                            <a href="carrinho.html" class="cart-icon" title="Meu Carrinho">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nossos Produtos</h1>
+            <p>Soluções completas de segurança Kaspersky para todos os tamanhos de negócio</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters-section">
+        <div class="container">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="pessoal">Pessoal</button>
+                <button class="filter-btn" data-filter="empresarial">Empresarial</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Marketplace -->
+    <section class="marketplace">
+        <div class="container">
+            
+            <!-- Personal Products -->
+            <!-- Device Calculator -->
+            <div class="device-calculator-section">
+                <div class="calculator-card">
+                    <div class="calculator-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Calculadora de Proteção</h3>
+                        <p>Descubra quantos dispositivos você precisa proteger</p>
+                    </div>
+                    
+                    <div class="calculator-body">
+                        <div class="device-counter">
+                            <div class="device-type">
+                                <i class="fas fa-laptop"></i>
+                                <span>Computadores</span>
+                                <div class="counter-controls">
+                                    <button onclick="decrementDevice('computers')">-</button>
+                                    <span id="computers-count">1</span>
+                                    <button onclick="incrementDevice('computers')">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="device-type">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Smartphones</span>
+                                <div class="counter-controls">
+                                    <button onclick="decrementDevice('smartphones')">-</button>
+                                    <span id="smartphones-count">2</span>
+                                    <button onclick="incrementDevice('smartphones')">+</button>
+                                </div>
+                            </div>
+                            
+                            <div class="device-type">
+                                <i class="fas fa-tablet-alt"></i>
+                                <span>Tablets</span>
+                                <div class="counter-controls">
+                                    <button onclick="decrementDevice('tablets')">-</button>
+                                    <span id="tablets-count">0</span>
+                                    <button onclick="incrementDevice('tablets')">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="calculator-result">
+                            <div class="total-devices">
+                                <strong>Total de Dispositivos:</strong>
+                                <span id="total-devices" class="total-number">3</span>
+                            </div>
+                            
+                            <div class="recommendation" id="recommendation">
+                                <div class="recommendation-badge">✨ Recomendação</div>
+                                <h4 id="recommended-product">Kaspersky Plus</h4>
+                                <p id="recommended-reason">Proteção completa para até 5 dispositivos com VPN ilimitada</p>
+                                <div class="recommended-price">
+                                    <span class="price-label">Apenas</span>
+                                    <span id="recommended-price-value">R$ 117,90/ano</span>
+                                </div>
+                                <button class="btn btn-primary" onclick="scrollToProduct()">Ver Produto</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-section" id="standard">
+                <h2 class="category-title">Soluções Pessoais</h2>
+                
+                <div class="product-detail-card pessoal">
+                    <div class="product-badge">40% OFF</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Standard</h3>
+                            <p class="product-tagline">Mais que um antivírus. Nova proteção para múltiplos dispositivos</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.73/5 (159 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Recursos Inclusos:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Antivírus em tempo real</li>
+                            <li><i class="fas fa-check"></i> Proteção para pagamentos online</li>
+                            <li><i class="fas fa-check"></i> Recursos de desempenho</li>
+                            <li><i class="fas fa-check"></i> Navegação privada</li>
+                            <li><i class="fas fa-check"></i> Limpeza de disco</li>
+                            <li><i class="fas fa-check"></i> Modo Não Perturbe</li>
+                            <li><i class="fas fa-check"></i> Anti-phishing e Firewall</li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">5 Dispositivos</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 153,90</span>
+                                <span class="price">R$ 91,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('standard'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 153,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-trophy"></i> Produto mais votado</p>
+                    </div>
+                </div>
+
+                <div class="product-detail-card pessoal" id="plus">
+                    <div class="product-badge popular">40% OFF - Mais Vendido</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Plus</h3>
+                            <p class="product-tagline">Segurança. Desempenho. Privacidade. Tudo em um aplicativo fácil de usar</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.67/5 (224 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Todos os recursos do Standard, mais:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>VPN super rápida ilimitada</strong></li>
+                            <li><i class="fas fa-check"></i> Verificador de vazamento de dados</li>
+                            <li><i class="fas fa-check"></i> Gerenciador de senhas</li>
+                            <li><i class="fas fa-check"></i> Monitor de integridade do disco rígido</li>
+                            <li><i class="fas fa-check"></i> Firewall bidirecional avançado</li>
+                            <li><i class="fas fa-check"></i> Controle parental completo</li>
+                            <li><i class="fas fa-check"></i> Limpeza e otimização avançada</li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">5 Dispositivos</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 197,90</span>
+                                <span class="price">R$ 117,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('plus'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 197,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-trophy"></i> Plano avançado</p>
+                    </div>
+                </div>
+
+                <div class="product-detail-card pessoal" id="premium">
+                    <div class="product-badge premium">40% OFF + Voucher Uber R$ 30 GRÁTIS</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-crown"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Premium</h3>
+                            <p class="product-tagline">Proteção total. Abrange toda a sua vida digital</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>4.75/5 (744 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Todos os recursos do Plus, mais:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>Proteção de identidade</strong></li>
+                            <li><i class="fas fa-check"></i> <strong>Verificação e remoção de vírus por especialistas</strong></li>
+                            <li><i class="fas fa-check"></i> <strong>Suporte remoto de IT</strong></li>
+                            <li><i class="fas fa-check"></i> VPN rápida e ilimitada</li>
+                            <li><i class="fas fa-check"></i> Gerenciador de senhas</li>
+                            <li><i class="fas fa-check"></i> Monitoramento de vazamento de dados</li>
+                            <li><i class="fas fa-check"></i> Proteção completa para toda a família</li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS</li>
+                        </ul>
+                        <div class="promo-badge">
+                            <i class="fas fa-gift"></i> <strong>BÔNUS:</strong> Voucher Uber R$ 30 GRÁTIS!
+                        </div>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">5 Dispositivos</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 219,90</span>
+                                <span class="price">R$ 130,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('premium'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 219,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-trophy"></i> Melhor Valor | <i class="fas fa-star"></i> Plano premium</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Complementary Solutions -->
+            <div class="category-section" id="complementary">
+                <h2 class="category-title">Soluções Complementares</h2>
+                
+                <div class="product-detail-card pessoal">
+                    <div class="product-badge">35% OFF</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Safe Kids</h3>
+                            <p class="product-tagline">Controle parental completo para o bem-estar da família</p>
+                            <div class="product-rating">
+                                <i class="fas fa-trophy"></i>
+                                <span>7 Prêmios AV-TEST consecutivos | 1 milhão+ usuários</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Recursos Inclusos:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>Rastreamento GPS</strong> em tempo real</li>
+                            <li><i class="fas fa-check"></i> Filtro de conteúdo online</li>
+                            <li><i class="fas fa-check"></i> Pesquisa segura no YouTube</li>
+                            <li><i class="fas fa-check"></i> Controle de uso de aplicativos</li>
+                            <li><i class="fas fa-check"></i> Gerenciamento de tempo de tela</li>
+                            <li><i class="fas fa-check"></i> Programação de tempo de tela</li>
+                            <li><i class="fas fa-check"></i> Alertas de bateria fraca</li>
+                            <li><i class="fas fa-check"></i> <strong>Uma licença protege todos os filhos</strong></li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">1 Conta de Usuário</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 69,90</span>
+                                <span class="price">R$ 44,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('safekids'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 69,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-trophy"></i> Mais premiado em controle parental</p>
+                    </div>
+                </div>
+
+                <div class="product-detail-card pessoal">
+                    <div class="product-badge">33% OFF</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky VPN Secure Connection</h3>
+                            <p class="product-tagline">Segura. Privada. Excepcionalmente rápida</p>
+                            <div class="product-rating">
+                                <i class="fas fa-server"></i>
+                                <span>6000+ servidores em 120+ localizações</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Recursos Inclusos:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>VPN ilimitada super-rápida</strong> (até 20 Gbps)</li>
+                            <li><i class="fas fa-check"></i> Mais de 6000 servidores globais</li>
+                            <li><i class="fas fa-check"></i> Prevenção de vazamento de dados (Kill Switch)</li>
+                            <li><i class="fas fa-check"></i> Compatível com serviços de streaming (Netflix, Amazon Prime, Disney+)</li>
+                            <li><i class="fas fa-check"></i> Proteção de endereço IP</li>
+                            <li><i class="fas fa-check"></i> Navegação anônima total</li>
+                            <li><i class="fas fa-check"></i> Configuração automática por app</li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">5 Dispositivos</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 119,90</span>
+                                <span class="price">R$ 79,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('vpn'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 119,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-bolt"></i> Velocidade de até 20 Gbps</p>
+                    </div>
+                </div>
+
+                <div class="product-detail-card pessoal">
+                    <div class="product-badge">4% OFF</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Password Manager</h3>
+                            <p class="product-tagline">Gerencie suas senhas de forma segura e com agilidade</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.60/5 (53 avaliações) | 3,6 milhões+ downloads</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Recursos Inclusos:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>Cofre privado criptografado</strong> de nível bancário</li>
+                            <li><i class="fas fa-check"></i> Verificador de segurança de senhas</li>
+                            <li><i class="fas fa-check"></i> Gerador de senhas fortes</li>
+                            <li><i class="fas fa-check"></i> Armazenamento de dados confidenciais</li>
+                            <li><i class="fas fa-check"></i> Autenticador in-app (2FA)</li>
+                            <li><i class="fas fa-check"></i> Login automático com Chave de acesso</li>
+                            <li><i class="fas fa-check"></i> Sincronização entre dispositivos</li>
+                            <li><i class="fas fa-check"></i> Princípio de conhecimento zero (total privacidade)</li>
+                            <li><i class="fas fa-check"></i> Compatível: Windows, macOS, Android, iOS + Navegadores</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">1 Conta de Usuário</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 64,90</span>
+                                <span class="price">R$ 61,90<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('password'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço promocional 1º ano. Renovação: R$ 64,90/ano</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-lock"></i> Criptografia de nível bancário</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Products -->
+            <div class="category-section" id="business">
+                <h2 class="category-title">Soluções Empresariais</h2>
+                
+                <div class="product-detail-card empresarial">
+                    <div class="product-badge business">10% OFF + Voucher Presente até R$ 150</div>
+                    <div class="product-header">
+                        <div class="product-icon-large">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <h3>Kaspersky Small Office Security</h3>
+                            <p class="product-tagline">Antivírus para pequenas empresas sem equipe de TI</p>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>4.59/5 (17 avaliações)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-features">
+                        <h4>Proteção essencial para 5 usuários:</h4>
+                        <ul>
+                            <li><i class="fas fa-check"></i> <strong>5 Desktops</strong> (Windows/Mac)</li>
+                            <li><i class="fas fa-check"></i> <strong>5 Dispositivos móveis</strong> (Android/iOS)</li>
+                            <li><i class="fas fa-check"></i> <strong>1 Servidor de arquivos</strong></li>
+                            <li><i class="fas fa-check"></i> <strong>5 Gerenciadores de senhas</strong></li>
+                            <li><i class="fas fa-check"></i> <strong>5 VPN premium</strong></li>
+                            <li><i class="fas fa-check"></i> Proteção contra phishing e malware</li>
+                            <li><i class="fas fa-check"></i> VPN integrada para trabalho remoto</li>
+                            <li><i class="fas fa-check"></i> Backup criptografado de dados</li>
+                            <li><i class="fas fa-check"></i> Gerenciamento centralizado</li>
+                            <li><i class="fas fa-check"></i> <strong>Sem necessidade de equipe de TI</strong></li>
+                        </ul>
+                        <div class="promo-badge">
+                            <i class="fas fa-gift"></i> <strong>BÔNUS:</strong> Voucher presente até R$ 150 (Kopenhagen, Shopee, Dengo, Zé Delivery ou Uber)
+                        </div>
+                    </div>
+                    <div class="pricing-section">
+                        <div class="price-option">
+                            <span class="devices">5 Usuários (15 dispositivos)</span>
+                            <div class="price-container">
+                                <span class="price-old">R$ 570,00</span>
+                                <span class="price">R$ 513,00<span class="period">/ano*</span></span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCart('smalloffice'); return false;"><i class="fas fa-cart-plus"></i> Adicionar ao Carrinho</button>
+                            <small class="price-note">*Preço inicial para novos clientes</small>
+                        </div>
+                    </div>
+                    <div class="product-footer">
+                        <p><i class="fas fa-shield-check"></i> Garantia de 30 dias | <i class="fas fa-trophy"></i> Mais premiado | <i class="fas fa-download"></i> Avaliação grátis disponível</p>
+                    </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2>Vantagens de Comprar com a Tui Tecnologia</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-certificate"></i>
+                    <h4>Licenças Originais</h4>
+                    <p>100% genuínas e garantidas</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Entrega Imediata</h4>
+                    <p>Ativação em minutos</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-headset"></i>
+                    <h4>Suporte Técnico</h4>
+                    <p>Especialistas à disposição</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-tags"></i>
+                    <h4>Melhores Preços</h4>
+                    <p>Condições especiais para empresas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Precisa de Ajuda para Escolher?</h2>
+            <p>Nossa equipe está pronta para ajudar você a encontrar a solução ideal</p>
+            <a href="contato.html" class="btn btn-primary btn-large">Falar com Especialista</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TUI Tecnologia</h3>
+                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
+                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
+                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
+                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@tuitecnologia.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 0000-0000</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entre em contato com a Tui Tecnologia. Solicite orçamentos e tire suas dúvidas sobre produtos Kaspersky.">
+    <title>Contato - Tui Tecnologia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>TUI <span>Tecnologia</span></h1>
+                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html" class="active">Contato</a></li>
+                        <li>
+                            <a href="carrinho.html" class="cart-icon" title="Meu Carrinho">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Entre em Contato</h1>
+            <p>Estamos prontos para atender você</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h2>Envie sua Mensagem</h2>
+                    <!-- Para ativar Formspree: descomente a linha abaixo e adicione seu Form ID -->
+                    <!-- <form id="contactForm" class="contact-form" action="https://formspree.io/f/SEU_FORM_ID" method="POST"> -->
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nome">Nome Completo *</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefone">Telefone *</label>
+                                <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="empresa">Empresa</label>
+                                <input type="text" id="empresa" name="empresa">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto">Assunto *</label>
+                            <select id="assunto" name="assunto" required>
+                                <option value="">Selecione um assunto</option>
+                                <option value="orcamento">Solicitar Orçamento</option>
+                                <option value="duvida">Dúvida sobre Produtos</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="parceria">Parceria Comercial</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="produto">Produto de Interesse</label>
+                            <select id="produto" name="produto">
+                                <option value="">Selecione um produto</option>
+                                <option value="standard">Kaspersky Standard</option>
+                                <option value="plus">Kaspersky Plus</option>
+                                <option value="premium">Kaspersky Premium</option>
+                                <option value="small-office">Small Office Security</option>
+                                <option value="endpoint">Endpoint Security</option>
+                                <option value="mail-server">Security for Mail Server</option>
+                                <option value="storage">Security for Storage</option>
+                                <option value="outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensagem">Mensagem *</label>
+                            <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="formMessage" class="form-message"></div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper">
+                    <h2>Informações de Contato</h2>
+                    
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Endereço</h4>
+                            <p>São Paulo, SP<br>Brasil</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Telefone</h4>
+                            <p>(11) 0000-0000</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>E-mail</h4>
+                            <p>contato@tuitecnologia.com.br</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 9h às 18h<br>Sábado: 9h às 13h</p>
+                        </div>
+                    </div>
+
+                    <div class="social-contact">
+                        <h4>Redes Sociais</h4>
+                        <div class="social-links-large">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Perguntas Frequentes</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Como funciona a entrega das licenças?</h3>
+                    <p>As licenças são digitais e enviadas por e-mail imediatamente após a confirmação do pagamento. Você receberá o código de ativação e instruções completas de instalação.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> As licenças são originais?</h3>
+                    <p>Sim! Somos revenda autorizada Kaspersky. Todas as licenças são 100% originais, garantidas pelo fabricante.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Qual a diferença entre os planos?</h3>
+                    <p>Standard oferece proteção básica, Plus adiciona recursos como controle parental e gerenciador de senhas, e Premium inclui VPN ilimitada e proteção de identidade. Veja mais detalhes na página de produtos.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Vocês oferecem suporte técnico?</h3>
+                    <p>Sim! Oferecemos suporte completo para instalação, ativação e uso dos produtos. Nossa equipe está disponível por telefone, e-mail e WhatsApp.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> É possível migrar de outro antivírus?</h3>
+                    <p>Sim! Ajudamos você a fazer a migração de forma segura, garantindo que seu equipamento fique protegido durante todo o processo.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Há desconto para compras em volume?</h3>
+                    <p>Sim! Oferecemos condições especiais para empresas e compras de múltiplas licenças. Entre em contato para um orçamento personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Prefere Falar Pelo WhatsApp?</h2>
+            <p>Atendimento rápido e direto com nossa equipe</p>
+            <a href="https://wa.me/5511000000000" class="btn btn-success btn-large" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TUI Tecnologia</h3>
+                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
+                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
+                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
+                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@tuitecnologia.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 0000-0000</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+# Arquivos de Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.sublime-project
+.sublime-workspace
+
+# Node modules (caso use npm no futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Logs
+logs/
+*.log
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Build (caso use ferramentas de build)
+dist/
+build/
+.cache/
+
+# Temporários
+*.tmp
+*.temp
+.tmp/
+
+# Backup
+*.bak
+*-backup/
+backup/
+
+# Documentação de desenvolvimento (opcional - descomente se não quiser versionar)
+# CHECKLIST.md
+# CUSTOMIZACAO.md
+# INTEGRACOES.html
+# COMO-USAR.md
+
+# Arquivos sensíveis (NUNCA commitar)
+*.key
+*.pem
+*.p12
+config/secrets.js
+credentials.json
+
+# OS
+.Spotlight-V100
+.Trashes
+ehthumbs.db

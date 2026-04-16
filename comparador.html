@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare produtos Kaspersky lado a lado - Tui Tecnologia">
+    <title>Comparador de Produtos - Tui Tecnologia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .comparador-container {
+            padding: var(--spacing-lg) 0;
+        }
+        
+        .comparador-intro {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .product-selector {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+        
+        .selector-box {
+            background: var(--bg-white);
+            padding: var(--spacing-md);
+            border-radius: 10px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .selector-box label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .selector-box select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+        
+        .selector-box select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .comparison-table {
+            background: var(--bg-white);
+            border-radius: 10px;
+            box-shadow: var(--shadow-xl);
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        thead {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+        }
+        
+        th {
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        th.feature-col {
+            text-align: left;
+            background: #2c3e50;
+        }
+        
+        tbody tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+        
+        td {
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        td.feature-name {
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .check-icon {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .cross-icon {
+            color: #e74c3c;
+            font-size: 1.5rem;
+        }
+        
+        .price-tag {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price-old {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 1rem;
+            display: block;
+        }
+        
+        .discount-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        .cta-row td {
+            padding: 1.5rem 1rem;
+            background: var(--bg-light);
+        }
+        
+        .comparison-cta {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all var(--transition-fast);
+        }
+        
+        .comparison-cta:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .category-header {
+            background: #34495e;
+            color: white;
+            font-weight: 700;
+            text-align: left;
+            padding: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            th, td {
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .price-tag {
+                font-size: 1.3rem;
+            }
+            
+            .product-selector {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>TUI <span>Tecnologia</span></h1>
+                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Comparador de Produtos</h1>
+            <p>Compare lado a lado e escolha o produto ideal para você</p>
+        </div>
+    </section>
+
+    <!-- Comparador -->
+    <section class="comparador-container">
+        <div class="container">
+            <div class="comparador-intro">
+                <h2>Escolha os produtos para comparar</h2>
+                <p>Selecione até 3 produtos para visualizar as diferenças e semelhanças</p>
+            </div>
+
+            <div class="product-selector" id="productSelector">
+                <div class="selector-box">
+                    <label for="product1"><i class="fas fa-box"></i> Produto 1</label>
+                    <select id="product1" onchange="updateComparison()">
+                        <option value="">Selecione...</option>
+                        <option value="standard" selected>Kaspersky Standard</option>
+                        <option value="plus">Kaspersky Plus</option>
+                        <option value="premium">Kaspersky Premium</option>
+                        <option value="safekids">Kaspersky Safe Kids</option>
+                        <option value="vpn">Kaspersky VPN</option>
+                        <option value="password">Password Manager</option>
+                        <option value="smalloffice">Small Office Security</option>
+                    </select>
+                </div>
+
+                <div class="selector-box">
+                    <label for="product2"><i class="fas fa-box"></i> Produto 2</label>
+                    <select id="product2" onchange="updateComparison()">
+                        <option value="">Selecione...</option>
+                        <option value="standard">Kaspersky Standard</option>
+                        <option value="plus" selected>Kaspersky Plus</option>
+                        <option value="premium">Kaspersky Premium</option>
+                        <option value="safekids">Kaspersky Safe Kids</option>
+                        <option value="vpn">Kaspersky VPN</option>
+                        <option value="password">Password Manager</option>
+                        <option value="smalloffice">Small Office Security</option>
+                    </select>
+                </div>
+
+                <div class="selector-box">
+                    <label for="product3"><i class="fas fa-box"></i> Produto 3</label>
+                    <select id="product3" onchange="updateComparison()">
+                        <option value="">Selecione...</option>
+                        <option value="standard">Kaspersky Standard</option>
+                        <option value="plus">Kaspersky Plus</option>
+                        <option value="premium" selected>Kaspersky Premium</option>
+                        <option value="safekids">Kaspersky Safe Kids</option>
+                        <option value="vpn">Kaspersky VPN</option>
+                        <option value="password">Password Manager</option>
+                        <option value="smalloffice">Small Office Security</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="comparison-table" id="comparisonTable">
+                <!-- Tabela será preenchida via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ainda tem dúvidas?</h2>
+            <p>Nossa equipe está pronta para ajudar você a escolher o produto ideal</p>
+            <a href="contato.html" class="btn btn-primary btn-large">Falar com Especialista</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TUI Tecnologia</h3>
+                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
+                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
+                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
+                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@tuitecnologia.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 0000-0000</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/comparador.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

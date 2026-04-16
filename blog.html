@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Tui Tecnologia - Dicas de Segurança Digital, Notícias Kaspersky e Tutoriais">
+    <meta name="keywords" content="blog segurança digital, kaspersky tutorial, antivírus dicas, cibersegurança">
+    <title>Blog - Tui Tecnologia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-hero {
+            background: var(--gradient-hero);
+            color: white;
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            text-align: center;
+        }
+        
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .blog-categories {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+            margin: var(--spacing-lg) 0;
+        }
+        
+        .category-tag {
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-weight: 500;
+        }
+        
+        .category-tag:hover,
+        .category-tag.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .blog-container {
+            padding: var(--spacing-xl) 0;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: var(--spacing-lg);
+        }
+        
+        .blog-card {
+            background: var(--bg-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            cursor: pointer;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+        }
+        
+        .blog-content {
+            padding: var(--spacing-lg);
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .blog-meta i {
+            color: var(--primary-color);
+        }
+        
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-dark);
+        }
+        
+        .blog-excerpt {
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .blog-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .tag {
+            background: var(--bg-light);
+            color: var(--text-dark);
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap var(--transition-fast);
+        }
+        
+        .read-more:hover {
+            gap: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div class="logo">
+                        <h1>TUI <span>Tecnologia</span></h1>
+                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                    </div>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html" class="active">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li>
+                            <a href="carrinho.html" class="cart-icon" title="Meu Carrinho">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar tema claro/escuro">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1><i class="fas fa-blog"></i> Blog Tui Tecnologia</h1>
+            <p>Dicas, notícias e tutoriais sobre segurança digital</p>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="container">
+        <div class="blog-categories">
+            <button class="category-tag active" data-category="all">Todos</button>
+            <button class="category-tag" data-category="dicas">Dicas</button>
+            <button class="category-tag" data-category="tutoriais">Tutoriais</button>
+            <button class="category-tag" data-category="noticias">Notícias</button>
+            <button class="category-tag" data-category="comparativos">Comparativos</button>
+        </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-container">
+        <div class="container">
+            <div class="blog-grid" id="blogGrid">
+                
+                <!-- Blog Post 1 -->
+                <article class="blog-card reveal" data-category="dicas">
+                    <div class="blog-image">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 10 Abr 2026</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h2 class="blog-title">Como Escolher o Antivírus Ideal para Sua Empresa</h2>
+                        <p class="blog-excerpt">Descubra os critérios essenciais para selecionar a solução de segurança perfeita para proteger sua empresa contra ameaças cibernéticas.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Empresas</span>
+                            <span class="tag">Segurança</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-card reveal reveal-delay-1" data-category="tutoriais">
+                    <div class="blog-image">
+                        <i class="fas fa-user-lock"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 8 Abr 2026</span>
+                            <span><i class="far fa-clock"></i> 7 min</span>
+                        </div>
+                        <h2 class="blog-title">Guia Completo: Instalando Kaspersky em 5 Passos</h2>
+                        <p class="blog-excerpt">Tutorial passo a passo para instalar e configurar corretamente o Kaspersky em seus dispositivos, garantindo proteção máxima.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Tutorial</span>
+                            <span class="tag">Kaspersky</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="blog-card reveal reveal-delay-2" data-category="comparativos">
+                    <div class="blog-image">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 5 Abr 2026</span>
+                            <span><i class="far fa-clock"></i> 10 min</span>
+                        </div>
+                        <h2 class="blog-title">Kaspersky Standard vs Plus vs Premium: Qual Escolher?</h2>
+                        <p class="blog-excerpt">Comparação detalhada entre os três principais planos da Kaspersky para ajudá-lo a tomar a melhor decisão.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Comparativo</span>
+                            <span class="tag">Produtos</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="blog-card reveal" data-category="dicas">
+                    <div class="blog-image">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 2 Abr 2026</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h2 class="blog-title">10 Dicas Para Proteger Seu Smartphone de Vírus</h2>
+                        <p class="blog-excerpt">Aprenda as melhores práticas para manter seu dispositivo móvel seguro contra malwares, phishing e outras ameaças.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Mobile</span>
+                            <span class="tag">Dicas</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 5 -->
+                <article class="blog-card reveal reveal-delay-1" data-category="noticias">
+                    <div class="blog-image">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 30 Mar 2026</span>
+                            <span><i class="far fa-clock"></i> 4 min</span>
+                        </div>
+                        <h2 class="blog-title">Kaspersky Lança Nova Funcionalidade de IA Anti-Phishing</h2>
+                        <p class="blog-excerpt">Conheça a mais recente inovação da Kaspersky que usa inteligência artificial para detectar sites fraudulentos.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Notícias</span>
+                            <span class="tag">IA</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <!-- Blog Post 6 -->
+                <article class="blog-card reveal reveal-delay-2" data-category="tutoriais">
+                    <div class="blog-image">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="far fa-calendar"></i> 28 Mar 2026</span>
+                            <span><i class="far fa-clock"></i> 8 min</span>
+                        </div>
+                        <h2 class="blog-title">Como Configurar Controle Parental no Kaspersky Safe Kids</h2>
+                        <p class="blog-excerpt">Guia completo para configurar e monitorar a atividade online dos seus filhos com segurança e privacidade.</p>
+                        <div class="blog-tags">
+                            <span class="tag">Tutorial</span>
+                            <span class="tag">Safe Kids</span>
+                        </div>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box reveal">
+                <h2><i class="fas fa-envelope"></i> Assine Nossa Newsletter</h2>
+                <p>Receba dicas de segurança digital, promoções exclusivas e novidades diretamente no seu email</p>
+                <form class="newsletter-form" style="display: flex; gap: 1rem; max-width: 500px; margin: 0 auto;">
+                    <input type="email" placeholder="Seu melhor email" style="flex: 1; padding: 1rem; border: 2px solid var(--primary-color); border-radius: 5px; font-size: 1rem;">
+                    <button type="submit" class="btn btn-primary">Assinar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TUI Tecnologia</h3>
+                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="comparador.html">Comparador</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Produtos</h4>
+                    <ul>
+                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
+                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
+                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
+                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i> contato@tuitecnologia.com.br</li>
+                        <li><i class="fas fa-phone"></i> (11) 0000-0000</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, SP</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        // Blog category filter
+        const categoryTags = document.querySelectorAll('.category-tag');
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        categoryTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                // Remove active class from all tags
+                categoryTags.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tag
+                tag.classList.add('active');
+                
+                const category = tag.dataset.category;
+                
+                // Filter blog cards
+                blogCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                        setTimeout(() => card.classList.add('reveal'), 10);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Newsletter form
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Obrigado por se inscrever! Em breve você receberá nossas novidades.');
+                newsletterForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!-- 
+    INTEGRAÇÕES - TUI TECNOLOGIA
+    Exemplos de código para integrar ferramentas de analytics e marketing
+    
+    IMPORTANTE: Substitua os IDs de exemplo pelos seus IDs reais!
+-->
+
+<!-- ============================================
+     GOOGLE ANALYTICS 4 (GA4)
+     Adicionar no <head> de TODAS as páginas HTML
+     ============================================ -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX'); // Substitua pelo seu ID
+</script>
+
+
+<!-- ============================================
+     GOOGLE TAG MANAGER
+     Adicionar logo após <head> e <body>
+     ============================================ -->
+
+<!-- Google Tag Manager - HEAD -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager - BODY (logo após <body>) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<!-- ============================================
+     FACEBOOK PIXEL
+     Adicionar no <head> de TODAS as páginas
+     ============================================ -->
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'XXXXXXXXXXXXXXX'); // Substitua pelo seu Pixel ID
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+<!-- ============================================
+     HOTJAR - HEATMAPS E GRAVAÇÕES
+     Adicionar no <head> de TODAS as páginas
+     ============================================ -->
+
+<!-- Hotjar Tracking Code -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:XXXXXXX,hjsv:6}; // Substitua XXXXXXX pelo seu ID
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+
+<!-- ============================================
+     MICROSOFT CLARITY
+     Adicionar no <head> de TODAS as páginas
+     ============================================ -->
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "XXXXXXXXXX"); // Substitua pelo seu ID
+</script>
+
+
+<!-- ============================================
+     OPEN GRAPH TAGS - FACEBOOK/LINKEDIN
+     Adicionar no <head> de cada página
+     ============================================ -->
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="Tui Tecnologia - Revenda Autorizada Kaspersky">
+<meta property="og:description" content="Proteção digital completa para sua empresa e residência.">
+<meta property="og:image" content="https://seusite.com/assets/images/og-image.jpg">
+<meta property="og:url" content="https://seusite.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tui Tecnologia">
+
+
+<!-- ============================================
+     TWITTER CARD TAGS
+     Adicionar no <head> de cada página
+     ============================================ -->
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tui Tecnologia - Revenda Autorizada Kaspersky">
+<meta name="twitter:description" content="Proteção digital completa para sua empresa e residência.">
+<meta name="twitter:image" content="https://seusite.com/assets/images/twitter-card.jpg">
+
+
+<!-- ============================================
+     WHATSAPP BUSINESS API (CHAT WIDGET)
+     Adicionar antes do </body>
+     ============================================ -->
+
+<!-- WhatsApp Chat Widget -->
+<script>
+    (function() {
+        var whatsappNumber = '5511000000000'; // Seu número com DDI e DDD
+        var whatsappMessage = 'Olá! Vim do site e gostaria de mais informações.';
+        
+        var btn = document.createElement('a');
+        btn.href = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(whatsappMessage);
+        btn.target = '_blank';
+        btn.rel = 'noopener noreferrer';
+        btn.className = 'whatsapp-float';
+        btn.innerHTML = '<i class="fab fa-whatsapp"></i>';
+        
+        document.body.appendChild(btn);
+    })();
+</script>
+
+<!-- CSS para o botão flutuante do WhatsApp -->
+<style>
+    .whatsapp-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    .whatsapp-float:hover {
+        background-color: #1eaa52;
+        transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+        .whatsapp-float {
+            width: 50px;
+            height: 50px;
+            bottom: 20px;
+            right: 20px;
+            font-size: 25px;
+        }
+    }
+</style>
+
+
+<!-- ============================================
+     FORMSPREE - FORMULÁRIO DE CONTATO
+     Substituir a tag <form> no contato.html
+     ============================================ -->
+
+<!-- Forma de uso: -->
+<form action="https://formspree.io/f/SEU_FORM_ID" method="POST">
+    <input type="hidden" name="_subject" value="Novo contato do site Tui Tecnologia">
+    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+    
+    <!-- Seus campos do formulário aqui -->
+    <input type="text" name="nome" required>
+    <input type="email" name="_replyto" required>
+    <textarea name="mensagem" required></textarea>
+    
+    <button type="submit">Enviar</button>
+</form>
+
+
+<!-- ============================================
+     GOOGLE RECAPTCHA V3
+     Adicionar no <head> e modificar formulário
+     ============================================ -->
+
+<!-- Script do reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js?render=SUA_CHAVE_DO_SITE"></script>
+
+<!-- No formulário: -->
+<script>
+function onSubmit(token) {
+    document.getElementById("contactForm").submit();
+}
+
+function validateForm() {
+    grecaptcha.ready(function() {
+        grecaptcha.execute('SUA_CHAVE_DO_SITE', {action: 'submit'}).then(function(token) {
+            // Adiciona o token ao formulário
+            var recaptchaResponse = document.getElementById('recaptchaResponse');
+            recaptchaResponse.value = token;
+            document.getElementById('contactForm').submit();
+        });
+    });
+}
+</script>
+
+<!-- Campo hidden no formulário -->
+<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+
+
+<!-- ============================================
+     GOOGLE SEARCH CONSOLE - VERIFICAÇÃO
+     Adicionar no <head> da index.html
+     ============================================ -->
+
+<meta name="google-site-verification" content="SEU_CODIGO_DE_VERIFICACAO">
+
+
+<!-- ============================================
+     BING WEBMASTER TOOLS - VERIFICAÇÃO
+     Adicionar no <head> da index.html
+     ============================================ -->
+
+<meta name="msvalidate.01" content="SEU_CODIGO_DE_VERIFICACAO">
+
+
+<!-- ============================================
+     FAVICON - ÍCONE DO SITE
+     Adicionar no <head> de TODAS as páginas
+     ============================================ -->
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+
+<!-- ============================================
+     SCHEMA.ORG - LOCAL BUSINESS
+     Adicionar no <head> da index.html
+     ============================================ -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Tui Tecnologia",
+  "image": "https://seusite.com/assets/images/logo.png",
+  "description": "Revenda Autorizada Kaspersky - Proteção Digital",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Exemplo, 123",
+    "addressLocality": "São Paulo",
+    "addressRegion": "SP",
+    "postalCode": "01000-000",
+    "addressCountry": "BR"
+  },
+  "telephone": "+55-11-0000-0000",
+  "email": "contato@tuitecnologia.com.br",
+  "url": "https://seusite.com",
+  "priceRange": "$$",
+  "openingHours": "Mo-Fr 09:00-18:00, Sa 09:00-13:00"
+}
+</script>
+
+
+<!-- ============================================
+     INSTRUÇÕES DE USO
+     ============================================
+
+1. ESCOLHA AS FERRAMENTAS:
+   - Não é necessário usar todas!
+   - Comece com Google Analytics + WhatsApp
+   - Adicione outras conforme necessário
+
+2. OBTENHA OS IDs:
+   - Google Analytics: analytics.google.com
+   - Facebook Pixel: business.facebook.com
+   - Hotjar: hotjar.com
+   - Formspree: formspree.io
+
+3. SUBSTITUA OS CÓDIGOS:
+   - Procure por XXXXXXX ou SEU_ID
+   - Substitua pelos seus códigos reais
+   - NUNCA compartilhe seus IDs publicamente
+
+4. TESTE TUDO:
+   - Use extensões de navegador para verificar
+   - Google Tag Assistant (Chrome)
+   - Facebook Pixel Helper (Chrome)
+   - Teste o formulário de contato
+
+5. PERFORMANCE:
+   - Não use TODAS as ferramentas de uma vez
+   - Muitos scripts podem deixar o site lento
+   - Use Google Tag Manager para gerenciar tudo
+
+============================================ -->
