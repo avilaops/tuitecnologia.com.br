@@ -9,12 +9,11 @@
 // Load saved theme or detect system preference
 function initTheme() {
     const savedTheme = localStorage.getItem('tuiTheme');
-    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
     if (savedTheme) {
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeIcon(savedTheme);
-    } else if (systemPrefersDark) {
+    } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         updateThemeIcon('dark');
     }
