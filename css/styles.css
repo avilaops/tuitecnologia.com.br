@@ -598,7 +598,7 @@ body::before {
     animation: fadeInRight 0.8s ease;
 }
 
-.hero-image i {
+.hero-image > i {
     font-size: 15rem;
     color: rgba(255, 255, 255, 0.2);
     animation: float 3s ease-in-out infinite;
@@ -737,17 +737,24 @@ body::before {
 
 .hero-contact-strip a,
 .hero-contact-strip span {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
+    line-height: 1.25;
 }
 
 .hero-contact-strip i {
+    flex: 0 0 1.35rem;
     width: 1.35rem;
-    margin-right: 0.45rem;
+    margin-right: 0;
     color: var(--primary-light);
     font-size: 1rem;
     animation: none;
+    line-height: 1;
+    text-align: center;
 }
 
 @keyframes float {
@@ -2448,7 +2455,7 @@ body::before {
         grid-template-columns: minmax(0, 1fr);
     }
 
-    .hero-image i {
+    .hero-image > i {
         font-size: 10rem;
     }
 
@@ -2508,7 +2515,7 @@ body::before {
         font-size: 1rem;
     }
 
-    .hero-image i {
+    .hero-image > i {
         font-size: 6rem;
     }
 
