@@ -7,6 +7,199 @@
     <title>Serviços - Tui Tecnologia</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== Multi-Orbit Integrations Section ===== */
+        .integrations-orbit-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--bg-light);
+        }
+
+        .orbit-scene-wrapper {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            margin-top: var(--spacing-xl);
+        }
+
+        .orbit-scene {
+            position: relative;
+            width: 560px;
+            height: 300px;
+            flex-shrink: 0;
+        }
+
+        /* Semi-circle arc tracks */
+        .orbit-track {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px dashed;
+            pointer-events: none;
+        }
+
+        .orbit-track-inner {
+            width: 240px;
+            height: 240px;
+            left: 160px;
+            top: 132px;
+            border-color: rgba(0, 200, 83, 0.32);
+            clip-path: inset(0 0 50% 0);
+        }
+
+        .orbit-track-outer {
+            width: 400px;
+            height: 400px;
+            left: 80px;
+            top: 52px;
+            border-color: rgba(0, 200, 83, 0.18);
+            clip-path: inset(0 0 50% 0);
+        }
+
+        /* Baseline – flat edge of the semi-circles */
+        .orbit-baseline {
+            position: absolute;
+            top: 251px;
+            left: 70px;
+            right: 70px;
+            height: 1px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                rgba(0, 200, 83, 0.22) 15%,
+                rgba(0, 200, 83, 0.48) 50%,
+                rgba(0, 200, 83, 0.22) 85%,
+                transparent 100%
+            );
+            pointer-events: none;
+        }
+
+        /* Central hub */
+        .orbit-hub {
+            position: absolute;
+            left: 245px;
+            top: 217px;
+            width: 70px;
+            height: 70px;
+            z-index: 10;
+        }
+
+        .orbit-hub-pulse {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid;
+            animation: orbit-hub-pulse 2.8s ease-out infinite;
+            pointer-events: none;
+        }
+
+        .orbit-hub-pulse-1 {
+            inset: -8px;
+            border-color: rgba(0, 200, 83, 0.35);
+            animation-delay: 0s;
+        }
+
+        .orbit-hub-pulse-2 {
+            inset: -12px;
+            border-color: rgba(0, 200, 83, 0.18);
+            animation-delay: 0.7s;
+        }
+
+        @keyframes orbit-hub-pulse {
+            0%   { transform: scale(0.95); opacity: 1; }
+            65%  { transform: scale(1.08); opacity: 0.4; }
+            100% { transform: scale(0.95); opacity: 1; }
+        }
+
+        .orbit-hub-core {
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, #00e676 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 28px rgba(0, 200, 83, 0.45), 0 4px 12px rgba(0, 0, 0, 0.12);
+        }
+
+        .orbit-hub-label {
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            line-height: 1;
+            letter-spacing: 0.06em;
+        }
+
+        .orbit-hub-sublabel {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.52rem;
+            line-height: 1.3;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Floating icon items */
+        .orbit-icon-item {
+            position: absolute;
+            left: var(--oi-left, 0);
+            top: var(--oi-top, 0);
+            width: 56px;
+            height: 56px;
+            animation: orbit-float 3.5s ease-in-out infinite;
+            animation-delay: var(--oi-delay, 0s);
+            z-index: 5;
+        }
+
+        @keyframes orbit-float {
+            0%, 100% { transform: translateY(0px); }
+            50%       { transform: translateY(-8px); }
+        }
+
+        .orbit-icon-card {
+            width: 100%;
+            height: 100%;
+            background: var(--bg-white);
+            border-radius: 14px;
+            border: 1.5px solid var(--border-color);
+            box-shadow: 0 3px 14px rgba(0, 0, 0, 0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: default;
+        }
+
+        .orbit-icon-item:hover {
+            z-index: 20;
+        }
+
+        .orbit-icon-item:hover .orbit-icon-card {
+            transform: scale(1.2) translateY(-4px);
+            box-shadow: 0 8px 26px rgba(0, 0, 0, 0.14);
+            border-color: var(--primary-color);
+        }
+
+        .orbit-icon-card i {
+            font-size: 1.3rem;
+        }
+
+        .orbit-icon-card span {
+            font-size: 0.45rem;
+            font-weight: 700;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            text-align: center;
+        }
+
+        /* Responsive scaling */
+        @media (max-width: 580px) {
+            .orbit-scene {
+                transform: scale(0.6);
+                transform-origin: top center;
+                margin-bottom: -120px;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -205,41 +398,72 @@
         </div>
     </section>
 
-    <!-- Integrations Section -->
-    <section class="integrations-section">
+    <!-- Integrations Section – Multi-Orbit Semi-Circle -->
+    <section class="integrations-orbit-section">
         <div class="container">
             <h2 class="section-title reveal">Integrações e ferramentas</h2>
-            <p class="section-subtitle reveal">Trabalhamos com as melhores tecnologias do mercado</p>
-            <div class="integrations-grid">
-                <div class="integration-card reveal">
-                    <div class="integration-icon"><i class="fas fa-credit-card"></i></div>
-                    <strong>Stripe</strong>
-                    <span>Pagamentos</span>
-                </div>
-                <div class="integration-card reveal reveal-delay-1">
-                    <div class="integration-icon"><i class="fas fa-share-nodes"></i></div>
-                    <strong>n8n</strong>
-                    <span>Automação</span>
-                </div>
-                <div class="integration-card reveal reveal-delay-2">
-                    <div class="integration-icon"><i class="fas fa-paper-plane"></i></div>
-                    <strong>Resend</strong>
-                    <span>E-mail Transacional</span>
-                </div>
-                <div class="integration-card reveal reveal-delay-3">
-                    <div class="integration-icon"><i class="fas fa-chart-bar"></i></div>
-                    <strong>Google Analytics</strong>
-                    <span>Analytics &amp; GA4</span>
-                </div>
-                <div class="integration-card reveal reveal-delay-1">
-                    <div class="integration-icon"><i class="fab fa-facebook"></i></div>
-                    <strong>Facebook Pixel</strong>
-                    <span>Rastreamento</span>
-                </div>
-                <div class="integration-card reveal reveal-delay-2">
-                    <div class="integration-icon"><i class="fas fa-bug"></i></div>
-                    <strong>Sentry</strong>
-                    <span>Monitoramento</span>
+            <p class="section-subtitle reveal">Conectamos as melhores tecnologias do mercado ao seu negócio</p>
+
+            <div class="orbit-scene-wrapper">
+                <div class="orbit-scene">
+
+                    <!-- Semi-circle arc tracks -->
+                    <div class="orbit-track orbit-track-outer"></div>
+                    <div class="orbit-track orbit-track-inner"></div>
+
+                    <!-- Baseline (flat edge of semi-circles) -->
+                    <div class="orbit-baseline"></div>
+
+                    <!-- Central hub (center at scene x=280, y=252) -->
+                    <div class="orbit-hub">
+                        <div class="orbit-hub-pulse orbit-hub-pulse-1"></div>
+                        <div class="orbit-hub-pulse orbit-hub-pulse-2"></div>
+                        <div class="orbit-hub-core">
+                            <span class="orbit-hub-label">TUI</span>
+                            <span class="orbit-hub-sublabel">Hub</span>
+                        </div>
+                    </div>
+
+                    <!-- Inner orbit R=120px: Stripe θ=150°, n8n θ=90°, Resend θ=30° -->
+                    <div class="orbit-icon-item" style="--oi-left:148px;--oi-top:164px;--oi-delay:0s">
+                        <div class="orbit-icon-card">
+                            <i class="fas fa-credit-card" style="color:#6772e5"></i>
+                            <span>Stripe</span>
+                        </div>
+                    </div>
+                    <div class="orbit-icon-item" style="--oi-left:252px;--oi-top:104px;--oi-delay:0.5s">
+                        <div class="orbit-icon-card">
+                            <i class="fas fa-share-nodes" style="color:#e74c3c"></i>
+                            <span>n8n</span>
+                        </div>
+                    </div>
+                    <div class="orbit-icon-item" style="--oi-left:356px;--oi-top:164px;--oi-delay:1s">
+                        <div class="orbit-icon-card">
+                            <i class="fas fa-paper-plane" style="color:var(--text-dark)"></i>
+                            <span>Resend</span>
+                        </div>
+                    </div>
+
+                    <!-- Outer orbit R=200px: Google Analytics θ=160°, Facebook Pixel θ=90°, Sentry θ=20° -->
+                    <div class="orbit-icon-item" style="--oi-left:64px;--oi-top:156px;--oi-delay:0.25s">
+                        <div class="orbit-icon-card">
+                            <i class="fas fa-chart-bar" style="color:#f9ab00"></i>
+                            <span>Analytics</span>
+                        </div>
+                    </div>
+                    <div class="orbit-icon-item" style="--oi-left:252px;--oi-top:24px;--oi-delay:0.75s">
+                        <div class="orbit-icon-card">
+                            <i class="fab fa-facebook" style="color:#1877f2"></i>
+                            <span>Pixel</span>
+                        </div>
+                    </div>
+                    <div class="orbit-icon-item" style="--oi-left:440px;--oi-top:156px;--oi-delay:1.25s">
+                        <div class="orbit-icon-card">
+                            <i class="fas fa-bug" style="color:#6c5fc7"></i>
+                            <span>Sentry</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
