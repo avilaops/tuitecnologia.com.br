@@ -58,13 +58,14 @@ function aiQuickReply(topic) {
     const messagesEl = document.getElementById('aiChatMessages');
     if (!messagesEl) return;
 
-    // Remove existing quick replies at root level
-    messagesEl.querySelectorAll('.ai-quick-replies').forEach(el => el.remove());
+    // Remove quick replies only from the initial greeting message
+    const firstMsg = messagesEl.querySelector('.ai-message');
+    if (firstMsg) firstMsg.querySelectorAll('.ai-quick-replies').forEach(el => el.remove());
 
     // User bubble
     const userMsg = document.createElement('div');
     userMsg.className = 'ai-message user-message';
-    userMsg.innerHTML = `<div class="ai-message-bubble">${topic}</div>`;
+    userMsg.innerHTML = `<div class="ai-message-bubble">${escapeHtml(topic)}</div>`;
     messagesEl.appendChild(userMsg);
     messagesEl.scrollTop = messagesEl.scrollHeight;
 
@@ -152,7 +153,7 @@ function handleCtaClick(cta) {
             window.open('https://wa.me/5517988151758?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.', '_blank', 'noopener,noreferrer');
             break;
         case 'Enviar E-mail':
-            window.location.href = 'mailto:tuitecnologia@gmail.com';
+            window.open('mailto:tuitecnologia@gmail.com', '_blank', 'noopener,noreferrer');
             break;
         case 'Ver mais serviços':
             window.location.href = 'servicos.html#servicos';
