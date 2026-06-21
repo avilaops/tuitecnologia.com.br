@@ -3,12 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tui Tecnologia - Revenda Autorizada Kaspersky. Proteção digital completa para sua empresa e residência.">
-    <title>Tui Tecnologia - Revenda Autorizada Kaspersky</title>
+    <meta name="description" content="TUI Tecnologia — Soluções completas em tecnologia: desenvolvimento web, software, IA, infraestrutura, marketing digital e revenda autorizada Kaspersky.">
+    <title>TUI Tecnologia - Soluções Completas em Tecnologia</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Hero services showcase grid */
+        .hero-services-showcase {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 16px 0;
+        }
+        .hs-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            padding: 12px 8px;
+            border-radius: 12px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: transform 0.2s ease;
+            cursor: default;
+        }
+        .hs-item:hover { transform: translateY(-2px); }
+        .hs-item i { font-size: 1.2rem; }
+        .hs-item span { color: var(--text-light); }
+        .hs-item.web        { background: rgba(0,120,230,0.12);  color: #60a5fa; }
+        .hs-item.software   { background: rgba(139,92,246,0.12); color: #a78bfa; }
+        .hs-item.ai         { background: rgba(0,184,148,0.14);  color: var(--primary-light); }
+        .hs-item.infra      { background: rgba(234,179,8,0.12);  color: #fbbf24; }
+        .hs-item.consulting { background: rgba(249,115,22,0.12); color: #fb923c; }
+        .hs-item.marketing  { background: rgba(236,72,153,0.12); color: #f472b6; }
+
+        /* Kaspersky spotlight section */
+        .kaspersky-section {
+            padding: var(--spacing-xl) 0;
+            background: var(--bg-light);
+        }
+        .kaspersky-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+        .kaspersky-badge-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 18px;
+            background: rgba(0,200,83,0.1);
+            border: 1px solid rgba(0,200,83,0.28);
+            border-radius: 100px;
+            color: var(--primary-color);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+        .kaspersky-header h2 {
+            font-size: clamp(1.6rem, 3vw, 2.1rem);
+            margin-bottom: 12px;
+        }
+        .kaspersky-header p {
+            color: var(--text-light);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
+
     <!-- Header -->
     <header class="header">
         <nav class="navbar">
@@ -16,7 +83,7 @@
                 <div class="nav-wrapper">
                     <div class="logo">
                         <h1>TUI <span>Tecnologia</span></h1>
-                        <p class="logo-subtitle">Parceiro Autorizado Kaspersky</p>
+                        <p class="logo-subtitle">Soluções em Tecnologia</p>
                     </div>
                     <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu de navegação">
                         <i class="fas fa-bars"></i>
@@ -50,23 +117,36 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-kicker"><i class="fas fa-certificate"></i> Novidade: revenda autorizada Kaspersky</div>
-                <h2 class="hero-title">Tecnologia para todos com proteção de classe mundial</h2>
-                <p class="hero-subtitle">Soluções Kaspersky para residências e empresas, com atendimento consultivo, licenças originais e suporte direto da Tui Tecnologia.</p>
+                <div class="hero-kicker"><i class="fas fa-rocket"></i> Tecnologia completa para empresas</div>
+                <h2 class="hero-title">Tecnologia para fazer seu negócio crescer</h2>
+                <p class="hero-subtitle">Da criação do seu site à automação com inteligência artificial — a TUI Tecnologia cuida de toda a tecnologia da sua empresa com eficiência, segurança e inovação.</p>
                 <div class="hero-service-tags">
-                    <span><i class="fas fa-house-user"></i> Soluções domésticas</span>
-                    <span><i class="fas fa-building-shield"></i> Soluções corporativas</span>
+                    <span><i class="fas fa-globe"></i> Web</span>
+                    <span><i class="fas fa-code"></i> Software</span>
+                    <span><i class="fas fa-robot"></i> IA &amp; Automação</span>
+                    <span><i class="fas fa-server"></i> Infraestrutura</span>
+                    <span><i class="fas fa-chart-line"></i> Marketing</span>
+                    <span><i class="fas fa-shield-halved"></i> Kaspersky</span>
                 </div>
                 <div class="hero-buttons">
-                    <a href="produtos.html" class="btn btn-primary">Ver Soluções</a>
-                    <a href="contato.html" class="btn btn-secondary">Agende sua Avaliação</a>
+                    <a href="servicos.html" class="btn btn-primary">Conhecer Serviços</a>
+                    <a href="contato.html" class="btn btn-secondary">Solicitar Orçamento</a>
                 </div>
             </div>
             <div class="hero-image">
-                <div class="hero-brand-card" aria-label="Tui Tecnologia, revenda autorizada Kaspersky">
+                <div class="hero-brand-card" aria-label="TUI Tecnologia — soluções completas em tecnologia">
                     <div class="hero-logo-mark">
                         <strong>TUI</strong>
                         <span>Tecnologia para todos</span>
+                    </div>
+
+                    <div class="hero-services-showcase">
+                        <div class="hs-item web"><i class="fas fa-globe"></i><span>Web</span></div>
+                        <div class="hs-item software"><i class="fas fa-code"></i><span>Software</span></div>
+                        <div class="hs-item ai"><i class="fas fa-robot"></i><span>IA</span></div>
+                        <div class="hs-item infra"><i class="fas fa-server"></i><span>Infra</span></div>
+                        <div class="hs-item consulting"><i class="fas fa-briefcase"></i><span>Consultoria</span></div>
+                        <div class="hs-item marketing"><i class="fas fa-chart-line"></i><span>Marketing</span></div>
                     </div>
 
                     <div class="authorized-card">
@@ -74,25 +154,6 @@
                         <div>
                             <strong>Kaspersky</strong>
                             <span>Authorized Reseller</span>
-                        </div>
-                    </div>
-
-                    <div class="hero-mini-grid">
-                        <div class="hero-mini-card">
-                            <h3><i class="fas fa-home"></i> Domésticas</h3>
-                            <ul>
-                                <li>Antivírus e ransomware</li>
-                                <li>Internet banking seguro</li>
-                                <li>Controle parental</li>
-                            </ul>
-                        </div>
-                        <div class="hero-mini-card">
-                            <h3><i class="fas fa-server"></i> Corporativas</h3>
-                            <ul>
-                                <li>Proteção de endpoints</li>
-                                <li>Defesa contra ataques</li>
-                                <li>Gerenciamento centralizado</li>
-                            </ul>
                         </div>
                     </div>
 
@@ -107,70 +168,133 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Services Section -->
+    <section class="services-section" id="servicos">
         <div class="container">
-            <h2 class="section-title reveal">Por que escolher a Tui Tecnologia?</h2>
-            <div class="features-grid">
-                <div class="feature-card reveal reveal-delay-1">
-                    <div class="feature-icon">
-                        <i class="fas fa-certificate"></i>
+            <h2 class="section-title reveal">Soluções completas para sua empresa</h2>
+            <p class="section-subtitle reveal">Tecnologia integrada em todas as frentes do seu negócio — em um só lugar</p>
+
+            <div class="services-grid">
+
+                <div class="service-category-card reveal">
+                    <div class="service-card-header">
+                        <div class="service-icon web"><i class="fas fa-globe"></i></div>
+                        <h3>Desenvolvimento Web</h3>
                     </div>
-                    <h3>Revenda Autorizada</h3>
-                    <p>Parceiro oficial Kaspersky, garantindo produtos originais e suporte especializado</p>
+                    <p class="service-card-desc">Sites profissionais, modernos e otimizados para converter visitantes em clientes.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Websites responsivos e otimizados</li>
+                        <li><i class="fas fa-check"></i> SEO e rastreamento de conversões</li>
+                        <li><i class="fas fa-check"></i> Hospedagem e e-mails corporativos</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
                 </div>
-                <div class="feature-card reveal reveal-delay-2">
-                    <div class="feature-icon">
-                        <i class="fas fa-headset"></i>
+
+                <div class="service-category-card reveal reveal-delay-1">
+                    <div class="service-card-header">
+                        <div class="service-icon software"><i class="fas fa-code"></i></div>
+                        <h3>Desenvolvimento de Software</h3>
                     </div>
-                    <h3>Suporte Dedicado</h3>
-                    <p>Equipe técnica qualificada para atender suas necessidades 24/7</p>
+                    <p class="service-card-desc">Sistemas sob medida que automatizam processos e otimizam a gestão da sua empresa.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Software e sistemas personalizados</li>
+                        <li><i class="fas fa-check"></i> Dashboards e integrações com APIs</li>
+                        <li><i class="fas fa-check"></i> Stripe, Sentry e IA generativa</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
                 </div>
-                <div class="feature-card reveal reveal-delay-3">
-                    <div class="feature-icon">
-                        <i class="fas fa-dollar-sign"></i>
+
+                <div class="service-category-card ai-highlight reveal reveal-delay-2">
+                    <div class="service-card-header">
+                        <div class="service-icon ai"><i class="fas fa-robot"></i></div>
+                        <h3>IA &amp; Automação</h3>
+                        <span class="service-badge">Novidade</span>
                     </div>
-                    <h3>Melhor Custo-Benefício</h3>
-                    <p>Preços competitivos e condições especiais para empresas</p>
+                    <p class="service-card-desc">Automatize processos e potencialize seu negócio com as mais modernas ferramentas de IA.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Assistente virtual com IA no seu site</li>
+                        <li><i class="fas fa-check"></i> Automação de fluxos com n8n</li>
+                        <li><i class="fas fa-check"></i> E-mail transacional com Resend</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
                 </div>
-                <div class="feature-card reveal reveal-delay-4">
-                    <div class="feature-icon">
-                        <i class="fas fa-rocket"></i>
+
+                <div class="service-category-card reveal">
+                    <div class="service-card-header">
+                        <div class="service-icon infra"><i class="fas fa-server"></i></div>
+                        <h3>Infraestrutura &amp; Suporte</h3>
                     </div>
-                    <h3>Entrega Rápida</h3>
-                    <p>Licenças digitais enviadas imediatamente após a confirmação do pagamento</p>
+                    <p class="service-card-desc">Mantenha sua empresa funcionando com suporte técnico especializado e infraestrutura confiável.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Suporte técnico especializado</li>
+                        <li><i class="fas fa-check"></i> Servidores, backup e nuvem</li>
+                        <li><i class="fas fa-check"></i> Licenças de antivírus e Windows</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
                 </div>
+
+                <div class="service-category-card reveal reveal-delay-1">
+                    <div class="service-card-header">
+                        <div class="service-icon consulting"><i class="fas fa-briefcase"></i></div>
+                        <h3>Consultoria &amp; Gestão de TI</h3>
+                    </div>
+                    <p class="service-card-desc">Estratégia e gestão de tecnologia para empresas que buscam crescer e reduzir custos.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Consultoria estratégica em TI</li>
+                        <li><i class="fas fa-check"></i> Redução de custos em tecnologia</li>
+                        <li><i class="fas fa-check"></i> Adequação e orientação em LGPD</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
+                </div>
+
+                <div class="service-category-card reveal reveal-delay-2">
+                    <div class="service-card-header">
+                        <div class="service-icon marketing"><i class="fas fa-chart-line"></i></div>
+                        <h3>Marketing Digital</h3>
+                    </div>
+                    <p class="service-card-desc">Estratégias digitais para atrair, converter e fidelizar clientes no ambiente online.</p>
+                    <ul class="service-list">
+                        <li><i class="fas fa-check"></i> Gestão de tráfego pago</li>
+                        <li><i class="fas fa-check"></i> SEO e otimização para buscadores</li>
+                        <li><i class="fas fa-check"></i> Google Analytics e campanhas</li>
+                    </ul>
+                    <a href="servicos.html#servicos" class="btn btn-outline service-cta">Saiba Mais</a>
+                </div>
+
+            </div>
+
+            <div class="text-center view-all-products">
+                <a href="servicos.html" class="btn btn-primary">Ver Todos os Serviços</a>
             </div>
         </div>
     </section>
 
-    <!-- Products Preview Section -->
-    <section class="products-preview">
+    <!-- Kaspersky Section -->
+    <section class="kaspersky-section">
         <div class="container">
-            <h2 class="section-title reveal">Produtos em Destaque</h2>
-            <p class="section-subtitle reveal">Conheça nossas principais soluções de segurança</p>
+            <div class="kaspersky-header reveal">
+                <div class="kaspersky-badge-wrap">
+                    <i class="fas fa-certificate"></i> Revenda Autorizada
+                </div>
+                <h2>Parceiro Oficial Kaspersky</h2>
+                <p>Licenças originais com atendimento consultivo, suporte especializado e as melhores condições para residências e empresas.</p>
+            </div>
             <div class="products-grid">
                 <div class="product-card reveal-scale reveal-delay-1">
-                    <div class="product-icon">
-                        <i class="fas fa-home"></i>
-                    </div>
+                    <div class="product-icon"><i class="fas fa-home"></i></div>
                     <h3>Kaspersky Standard</h3>
-                    <p>Proteção essencial para seu computador contra vírus, ransomware e ataques online</p>
+                    <p>Proteção essencial contra vírus, ransomware e ataques online</p>
                     <a href="produtos.html#standard" class="btn btn-outline">Saiba Mais</a>
                 </div>
                 <div class="product-card featured">
                     <div class="badge">Mais Popular</div>
-                    <div class="product-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
+                    <div class="product-icon"><i class="fas fa-star"></i></div>
                     <h3>Kaspersky Plus</h3>
                     <p>Proteção avançada com firewall, controle parental e gerenciador de senhas</p>
                     <a href="produtos.html#plus" class="btn btn-outline">Saiba Mais</a>
                 </div>
                 <div class="product-card reveal-scale reveal-delay-2">
-                    <div class="product-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
+                    <div class="product-icon"><i class="fas fa-crown"></i></div>
                     <h3>Kaspersky Premium</h3>
                     <p>Proteção máxima com VPN ilimitada e monitoramento de identidade</p>
                     <a href="produtos.html#premium" class="btn btn-outline">Saiba Mais</a>
@@ -182,24 +306,24 @@
         </div>
     </section>
 
-    <!-- Trust Section -->
+    <!-- Why TUI -->
     <section class="trust-section">
         <div class="container">
             <div class="trust-content reveal">
-                <h2>Confiança que Protege</h2>
-                <p>A Kaspersky é uma das líderes globais em segurança cibernética, protegendo mais de 400 milhões de usuários em todo o mundo. Como parceiro autorizado, oferecemos toda a expertise e qualidade da marca com atendimento personalizado.</p>
+                <h2>Por que escolher a TUI Tecnologia?</h2>
+                <p>Somos uma empresa de tecnologia completa, com expertise em múltiplas áreas para atender todos os aspectos digitais do seu negócio em um só lugar — com suporte próximo e foco no resultado.</p>
                 <div class="trust-stats">
                     <div class="stat reveal-scale reveal-delay-1">
-                        <h3>400M+</h3>
-                        <p>Usuários Protegidos</p>
+                        <h3>6+</h3>
+                        <p>Áreas de Atuação</p>
                     </div>
                     <div class="stat reveal-scale reveal-delay-2">
-                        <h3>25+</h3>
-                        <p>Anos de Experiência</p>
+                        <h3>100%</h3>
+                        <p>Foco no Cliente</p>
                     </div>
                     <div class="stat reveal-scale reveal-delay-3">
-                        <h3>200+</h3>
-                        <p>Países Atendidos</p>
+                        <h3>24/7</h3>
+                        <p>Suporte Técnico</p>
                     </div>
                 </div>
             </div>
@@ -209,9 +333,14 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Pronto para Proteger seu Negócio?</h2>
-            <p>Entre em contato e descubra a solução ideal para suas necessidades</p>
-            <a href="contato.html" class="btn btn-primary btn-large">Solicitar Cotação</a>
+            <h2>Pronto para transformar sua empresa com tecnologia?</h2>
+            <p>Fale com a TUI Tecnologia e descubra como podemos ajudar seu negócio a crescer</p>
+            <div class="cta-buttons">
+                <a href="contato.html" class="btn btn-primary btn-large">Solicitar Orçamento</a>
+                <a href="https://wa.me/5517988151758" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-large">
+                    <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+                </a>
+            </div>
         </div>
     </section>
 
@@ -221,7 +350,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TUI Tecnologia</h3>
-                    <p>Revenda autorizada Kaspersky, oferecendo as melhores soluções em segurança digital.</p>
+                    <p>Soluções completas em tecnologia para empresas e profissionais. Da web à IA, cuidamos de toda a tecnologia do seu negócio.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="https://www.instagram.com/tui_tecnologia" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
@@ -230,21 +359,23 @@
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Links Rápidos</h4>
+                    <h4>Serviços</h4>
                     <ul>
-                        <li><a href="index.html">Início</a></li>
-                        <li><a href="produtos.html">Produtos</a></li>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="servicos.html#servicos">Desenvolvimento Web</a></li>
+                        <li><a href="servicos.html#servicos">Desenvolvimento de Software</a></li>
+                        <li><a href="servicos.html#servicos">IA &amp; Automação</a></li>
+                        <li><a href="servicos.html#servicos">Infraestrutura &amp; Suporte</a></li>
+                        <li><a href="servicos.html#servicos">Consultoria &amp; Gestão</a></li>
+                        <li><a href="servicos.html#servicos">Marketing Digital</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Produtos</h4>
+                    <h4>Links Rápidos</h4>
                     <ul>
-                        <li><a href="produtos.html#standard">Kaspersky Standard</a></li>
-                        <li><a href="produtos.html#plus">Kaspersky Plus</a></li>
-                        <li><a href="produtos.html#premium">Kaspersky Premium</a></li>
-                        <li><a href="produtos.html#business">Soluções Empresariais</a></li>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="produtos.html">Produtos Kaspersky</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -252,17 +383,60 @@
                     <ul class="contact-info">
                         <li><i class="fas fa-envelope"></i> tuitecnologia@gmail.com</li>
                         <li><i class="fas fa-phone"></i> (17) 98815-1758</li>
+                        <li><i class="fab fa-instagram"></i> @tui_tecnologia</li>
                         <li><i class="fas fa-map-marker-alt"></i> Atendimento online</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados. | Revenda Autorizada Kaspersky</p>
+                <p>&copy; 2026 Tui Tecnologia. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- AI Assistant Widget -->
+    <div class="ai-assistant" id="aiAssistant">
+        <div class="ai-chat-panel ai-panel-hidden" id="aiChatPanel">
+            <div class="ai-chat-header">
+                <div class="ai-chat-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="ai-chat-header-info">
+                    <strong>Assistente TUI</strong>
+                    <span>Online agora</span>
+                </div>
+                <button class="ai-chat-close" id="aiChatClose" aria-label="Fechar assistente">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="ai-chat-messages" id="aiChatMessages">
+                <div class="ai-message">
+                    <div class="ai-message-bubble">
+                        Olá! Sou o assistente virtual da <strong>TUI Tecnologia</strong>. 👋<br><br>
+                        Como posso ajudar você hoje?
+                    </div>
+                    <div class="ai-quick-replies">
+                        <button class="ai-quick-btn" onclick="aiQuickReply('Desenvolvimento Web')">🌐 Web</button>
+                        <button class="ai-quick-btn" onclick="aiQuickReply('Software')">💻 Software</button>
+                        <button class="ai-quick-btn" onclick="aiQuickReply('IA e Automação')">🤖 IA</button>
+                        <button class="ai-quick-btn" onclick="aiQuickReply('Infraestrutura')">🖥️ Suporte</button>
+                        <button class="ai-quick-btn" onclick="aiQuickReply('Orçamento')">💰 Orçamento</button>
+                    </div>
+                </div>
+            </div>
+            <div class="ai-chat-input">
+                <input type="text" id="aiInput" placeholder="Digite sua mensagem..." autocomplete="off" />
+                <button id="aiSendBtn" aria-label="Enviar mensagem"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button class="ai-toggle-btn" id="aiToggleBtn" aria-label="Abrir assistente virtual">
+            <i class="fas fa-robot" id="aiToggleIcon"></i>
+            <span class="ai-toggle-pulse"></span>
+        </button>
+    </div>
+
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/ai-assistant.js"></script>
 </body>
 </html>
