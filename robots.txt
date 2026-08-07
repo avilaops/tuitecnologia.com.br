@@ -5,7 +5,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://seusite.com/sitemap.xml
+Sitemap: https://tuitecnologia.com.br/sitemap.xml
 
 # Bloquear arquivos de documentação (opcional)
 Disallow: /CHECKLIST.md
