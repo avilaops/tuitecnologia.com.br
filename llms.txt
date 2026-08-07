@@ -1,3 +1,14 @@
 # Tui Tecnologia
-Este site contém informações sobre os produtos, serviços, blog e contato da Tui Tecnologia.
-Sitemap disponível em https://tuitecnologia.com.br/sitemap.xml
+
+Bem-vindo ao portal da Tui Tecnologia. Oferecemos soluções completas em tecnologia, produtos e integrações para acelerar o seu negócio.
+
+## Estrutura do Site
+
+- [Página Inicial](https://tuitecnologia.com.br/)
+- [Produtos](https://tuitecnologia.com.br/produtos.html)
+- [Serviços](https://tuitecnologia.com.br/servicos.html)
+- [Sobre a Empresa](https://tuitecnologia.com.br/sobre.html)
+- [Contato](https://tuitecnologia.com.br/contato.html)
+- [Blog](https://tuitecnologia.com.br/blog.html)
+- [Sitemap](https://tuitecnologia.com.br/sitemap.xml)
+- [Para Empresas](https://tuitecnologia.com.br/empresas.html)
