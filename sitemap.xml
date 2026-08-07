@@ -1,81 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://tuitecnologia.com.br/black-friday.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/blog.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/carrinho.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/comparador.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/contato.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/empresas.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/index.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/produtos.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/promocao-40-off.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/servicos.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/sobre.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://tuitecnologia.com.br/voucher-uber.html</loc>
-        <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
     <url>
         <loc>https://tuitecnologia.com.br/</loc>
         <lastmod>2026-08-07</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
     </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/produtos.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/servicos.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/empresas.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/sobre.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/blog.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/comparador.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
+    <url>
+        <loc>https://tuitecnologia.com.br/contato.html</loc>
+        <lastmod>2026-08-07</lastmod>
+    </url>
+
 </urlset>

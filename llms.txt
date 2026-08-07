@@ -1,14 +1,39 @@
 # Tui Tecnologia
 
-Bem-vindo ao portal da Tui Tecnologia. Oferecemos soluções completas em tecnologia, produtos e integrações para acelerar o seu negócio.
+> Soluções em tecnologia, produtos, serviços e infraestrutura para pessoas e empresas. Revenda autorizada Kaspersky.
 
-## Estrutura do Site
+## Site
 
-- [Página Inicial](https://tuitecnologia.com.br/)
-- [Produtos](https://tuitecnologia.com.br/produtos.html)
-- [Serviços](https://tuitecnologia.com.br/servicos.html)
-- [Sobre a Empresa](https://tuitecnologia.com.br/sobre.html)
-- [Contato](https://tuitecnologia.com.br/contato.html)
-- [Blog](https://tuitecnologia.com.br/blog.html)
-- [Sitemap](https://tuitecnologia.com.br/sitemap.xml)
-- [Para Empresas](https://tuitecnologia.com.br/empresas.html)
+* Página inicial: [https://tuitecnologia.com.br/](https://tuitecnologia.com.br/)
+* Produtos: [https://tuitecnologia.com.br/produtos.html](https://tuitecnologia.com.br/produtos.html)
+* Serviços: [https://tuitecnologia.com.br/servicos.html](https://tuitecnologia.com.br/servicos.html)
+* Soluções para empresas: [https://tuitecnologia.com.br/empresas.html](https://tuitecnologia.com.br/empresas.html)
+* Blog: [https://tuitecnologia.com.br/blog.html](https://tuitecnologia.com.br/blog.html)
+* Sobre: [https://tuitecnologia.com.br/sobre.html](https://tuitecnologia.com.br/sobre.html)
+* Contato: [https://tuitecnologia.com.br/contato.html](https://tuitecnologia.com.br/contato.html)
+
+## Conteúdo
+
+A Tui Tecnologia disponibiliza informações sobre:
+
+* Produtos e soluções de tecnologia (Antivírus Kaspersky, Softwares sob medida)
+* Desenvolvimento Web e Sistemas Web responsivos
+* IA, Automação de processos (n8n, Resend, LLMs)
+* Infraestrutura, Suporte técnico e Gestão de TI
+* Soluções para empresas e consultoria LGPD
+* Marketing Digital e Gestão de tráfego pago
+* Artigos de tecnologia e tutoriais no blog
+* Promoções e campanhas comerciais
+* Canais oficiais de atendimento e suporte
+
+## Descoberta de conteúdo
+
+* Sitemap XML: [https://tuitecnologia.com.br/sitemap.xml](https://tuitecnologia.com.br/sitemap.xml)
+* Robots: [https://tuitecnologia.com.br/robots.txt](https://tuitecnologia.com.br/robots.txt)
+
+## Contato
+
+Para informações comerciais, produtos, serviços e suporte:
+* Contato: [https://tuitecnologia.com.br/contato.html](https://tuitecnologia.com.br/contato.html)
+* E-mail: tuitecnologia@gmail.com
+* WhatsApp: (17) 98815-1758

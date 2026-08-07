@@ -1,25 +1,12 @@
-# robots.txt para Tui Tecnologia
-# Configuração para motores de busca
+# Tui Tecnologia
+# https://tuitecnologia.com.br/
 
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://tuitecnologia.com.br/sitemap.xml
-
-# Bloquear arquivos de documentação (opcional)
 Disallow: /CHECKLIST.md
 Disallow: /CUSTOMIZACAO.md
 Disallow: /INTEGRACOES.html
 Disallow: /COMO-USAR.md
 
-# Permitir páginas principais
-Allow: /index.html
-Allow: /produtos.html
-Allow: /sobre.html
-Allow: /contato.html
-
-# Permitir recursos
-Allow: /css/
-Allow: /js/
-Allow: /assets/
+Sitemap: https://tuitecnologia.com.br/sitemap.xml
