@@ -9,14 +9,11 @@
     })(window,document,'script','dataLayer','GTM-5D7LVK8T');</script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P6ZKHR67XN"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-P6ZKHR67XN');
-    </script>
+    <!-- GA4 sai pelo container GTM-5D7LVK8T (tag GA4 — Config), não por gtag.js
+         direto: o G-P6ZKHR67XN que ficava aqui apontava para uma propriedade
+         fora da conta GA4 administrada pela Avila Ops, então os hits saíam do
+         navegador e ninguém conseguia ler o relatório. Hoje o container publica
+         o G-58EPELTZK3, criado pelo TagFlow. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Entre em contato com a Tui Tecnologia. Solicite orçamentos e tire suas dúvidas sobre produtos Kaspersky.">
     <title>Contato - Tui Tecnologia</title>

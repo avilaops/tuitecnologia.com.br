@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/*
+ * Paleta herdada do site anterior (--primary-color: #00b894 sobre fundo azul
+ * profundo). O que muda aqui e a tipografia: o site antigo usava a stack padrao
+ * do Windows ('Segoe UI', Tahoma, Geneva, Verdana), que nao tem identidade
+ * nenhuma. Agora ha webfont propria.
+ */
+@theme {
+  --color-canvas: #04122a;
+  --color-surface: #06152f;
+  --color-surface-2: #071f45;
+  --color-line: rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+
+  --color-ink: #eef6ff;
+  --color-ink-muted: #a9bdd6;
+
+  --color-brand: #00b894;
+  --color-brand-light: #54f4dd;
+  --color-brand-dark: #00806a;
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), sans-serif;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Foco visivel em toda a navegacao por teclado. */
+:focus-visible {
+  outline: 2px solid var(--color-brand-light);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -8,7 +8,7 @@ const aiResponses = {
         ctas: ['Solicitar Orçamento', 'Falar no WhatsApp']
     },
     'software': {
-        text: '💻 Desenvolvemos <strong>Software sob Medida</strong>:<br><br>• Sistemas administrativos e dashboards<br>• Integrações com APIs externas<br>• Integração com <strong>Stripe</strong> (pagamentos)<br>• Integração com <strong>Sentry</strong> (monitoramento)<br>• IA generativa integrada ao sistema<br><br>Vamos conversar sobre seu projeto?',
+        text: '💻 Desenvolvemos <strong>Software sob Medida</strong>:<br><br>• Sistemas administrativos e dashboards<br>• Integrações com APIs externas<br>• Integração com <strong>Mercado Pago</strong> (pagamentos)<br>• Integração com <strong>Sentry</strong> (monitoramento)<br>• IA generativa integrada ao sistema<br><br>Vamos conversar sobre seu projeto?',
         ctas: ['Solicitar Orçamento', 'Falar no WhatsApp']
     },
     'ia': {
@@ -111,7 +111,7 @@ function aiSendMessage() {
 
 function detectTopic(text) {
     if (/site|web|wordpress|hospedagem|seo|analytics|pixel/.test(text)) return 'desenvolvimento web';
-    if (/software|sistema|dashboard|stripe|sentry|api/.test(text)) return 'software';
+    if (/software|sistema|dashboard|mercado pago|pagamento|sentry|api/.test(text)) return 'software';
     if (/ia|intelig|automa|n8n|resend|chatbot|bot|robô/.test(text)) return 'ia';
     if (/infraestrutura|servidor|backup|suporte|técnico|antivírus|windows|nuvem|cloud/.test(text)) return 'infraestrutura';
     if (/marketing|tráfego|pago|campanha|facebook|instagram/.test(text)) return 'marketing';
