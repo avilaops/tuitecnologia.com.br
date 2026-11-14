@@ -17,4 +17,3 @@ O gerador central emite `/.well-known/ard.json`, catálogos de compatibilidade, 
 O upload inclui arquivos ocultos para preservar `.well-known`. `_site` contém somente os arquivos públicos copiados e gerados; o checkout do publicador permanece fora dele. Não se altera o mecanismo Pages ou Jekyll.
 
 A validação executável pertence ao CI: copiar o site, instalar o publicador com scripts npm desativados, gerar o catálogo e conferir recursos/MIMEs e exclusões no artefato. Não houve build ou teste local do projeto. Depois do deploy aprovado, conferir o JSON-LD da home, catálogo e ferramentas com e sem API no domínio real. Para rollback, restaurar juntos workflow e marcação anteriores e republicar o artefato pelo mecanismo Pages existente.
-
