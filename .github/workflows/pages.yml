@@ -21,6 +21,29 @@ jobs:
           mkdir _site
           cp *.html *.xml *.txt *.png manifest.json CNAME _site/
           cp -r css js _site/
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+        with:
+          node-version: 22
+      - name: Obter publicador de texto
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          repository: avilaops/motor-web
+          ref: 5d8cf306ceded156ab2a46ce1cfd29608e67496f
+          path: .publicacao-texto
+          persist-credentials: false
+      - name: Instalar publicador de texto
+        working-directory: .publicacao-texto
+        run: npm ci --ignore-scripts --omit=dev
+      - name: Gerar Markdown e MDX do HTML publicado
+        run: |
+          # Restrições da exportação textual; o HTML original permanece igual.
+          cat > _site/_headers <<'HEADERS'
+          /INTEGRACOES.html
+            X-Robots-Tag: noindex
+          /comparador.html
+            X-Robots-Tag: noindex
+          HEADERS
+          node .publicacao-texto/bin/publicar-texto.mjs --diretorio _site --origem https://tuitecnologia.com.br
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
