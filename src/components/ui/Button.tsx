@@ -5,9 +5,9 @@ type Variante = "primario" | "secundario" | "whatsapp";
 
 const variantes: Record<Variante, string> = {
   primario:
-    "bg-[--color-brand] text-[#04122a] hover:bg-[--color-brand-light] font-semibold",
+    "bg-brand text-[#04122a] hover:bg-brand-light font-semibold",
   secundario:
-    "border border-[--color-line-strong] text-[--color-ink] hover:border-[--color-brand] hover:text-[--color-brand-light]",
+    "border border-line-strong text-ink hover:border-brand hover:text-brand-light",
   whatsapp: "bg-[#25D366] text-[#04122a] hover:bg-[#1fbb59] font-semibold",
 };
 

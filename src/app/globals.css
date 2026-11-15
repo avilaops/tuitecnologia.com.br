@@ -28,6 +28,36 @@
   color-scheme: dark;
 }
 
+.doc-content {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+  line-height: 1.65;
+}
+
+.doc-content > h1,
+.doc-content > h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.doc-content > h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+.doc-content > h2 { font-size: 1.5rem; margin-top: 1rem; }
+.doc-content > ol { list-style: decimal; padding-inline-start: 1.5rem; }
+.doc-content a { color: var(--color-brand-light); text-decoration: underline; }
+
+.doc-panel {
+  border: 1px solid var(--color-line-strong);
+  border-radius: 1rem;
+  background: var(--color-surface);
+  padding: clamp(1rem, 3vw, 2rem);
+  margin: 0;
+}
+
+.doc-panel svg { display: block; margin-inline: auto; }
+
 body {
   background-color: var(--color-canvas);
   color: var(--color-ink);

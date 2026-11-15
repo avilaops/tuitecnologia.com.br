@@ -17,7 +17,7 @@ export default function ContatoPage() {
       <h1 className="font-[family-name:--font-display] text-4xl font-bold tracking-tight sm:text-5xl">
         Falar com a TUI
       </h1>
-      <p className="mt-4 text-lg text-[--color-ink-muted]">
+      <p className="mt-4 text-lg text-ink-muted">
         O diagnóstico inicial não tem custo. Escolha o canal que preferir — quem
         responde é {site.responsavel}, direto.
       </p>
@@ -27,14 +27,14 @@ export default function ContatoPage() {
           href={whatsappUrl(mensagemPadrao)}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-4 rounded-2xl border border-[--color-brand]/40 bg-[--color-surface-2] p-6 transition-colors hover:border-[--color-brand]"
+          className="flex items-center gap-4 rounded-2xl border border-brand/40 bg-surface-2 p-6 transition-colors hover:border-brand"
         >
           <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[#25D366] text-[#04122a]">
             <MessageCircle size={20} />
           </span>
           <span>
             <strong className="block font-semibold">WhatsApp</strong>
-            <span className="text-sm text-[--color-ink-muted]">
+            <span className="text-sm text-ink-muted">
               {site.telefone} — resposta em horário comercial
             </span>
           </span>
@@ -42,14 +42,14 @@ export default function ContatoPage() {
 
         <a
           href={`mailto:${site.email}?subject=${encodeURIComponent("Diagnóstico de TI")}`}
-          className="flex items-center gap-4 rounded-2xl border border-[--color-line] bg-[--color-surface] p-6 transition-colors hover:border-[--color-line-strong]"
+          className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-line-strong"
         >
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[--color-brand]/10 text-[--color-brand-light]">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand-light">
             <Mail size={20} />
           </span>
           <span>
             <strong className="block font-semibold">E-mail</strong>
-            <span className="text-sm text-[--color-ink-muted]">
+            <span className="text-sm text-ink-muted">
               {site.email}
             </span>
           </span>
@@ -59,33 +59,33 @@ export default function ContatoPage() {
           href={site.instagramUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-4 rounded-2xl border border-[--color-line] bg-[--color-surface] p-6 transition-colors hover:border-[--color-line-strong]"
+          className="flex items-center gap-4 rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-line-strong"
         >
-          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-[--color-brand]/10 text-[--color-brand-light]">
+          <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-brand/10 text-brand-light">
             <Instagram size={20} />
           </span>
           <span>
             <strong className="block font-semibold">Instagram</strong>
-            <span className="text-sm text-[--color-ink-muted]">
+            <span className="text-sm text-ink-muted">
               {site.instagram}
             </span>
           </span>
         </a>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-[--color-line] bg-[--color-surface] p-7">
+      <div className="mt-12 rounded-2xl border border-line bg-surface p-7">
         <h2 className="font-semibold">O que acontece depois do contato</h2>
-        <ol className="mt-4 space-y-3 text-sm text-[--color-ink-muted]">
+        <ol className="mt-4 space-y-3 text-sm text-ink-muted">
           <li>
-            <strong className="text-[--color-ink]">1.</strong> Conversa inicial
+            <strong className="text-ink">1.</strong> Conversa inicial
             para entender a operação e o que está doendo hoje.
           </li>
           <li>
-            <strong className="text-[--color-ink]">2.</strong> Diagnóstico do
+            <strong className="text-ink">2.</strong> Diagnóstico do
             parque, dos sistemas e dos riscos — sem custo.
           </li>
           <li>
-            <strong className="text-[--color-ink]">3.</strong> Proposta com
+            <strong className="text-ink">3.</strong> Proposta com
             escopo, plano recomendado e valor fechado.
           </li>
         </ol>

@@ -1,0 +1,25 @@
+export const metadata = {
+  title: "Como planejar a automação de pedidos",
+  description: "Guia para mapear, simular e validar a automação de pedidos.",
+  alternates: { canonical: "/ajuda/automatizar-pedidos/" },
+}
+
+# Como planejar a automação de pedidos
+
+1. Identifique de quais canais os pedidos chegam e onde devem ser registrados.
+2. Liste os dados obrigatórios, como identificação do cliente, itens e quantidades.
+3. Defina quem revisa pedidos incompletos e em que momento a confirmação deve ser enviada.
+
+<FluxoDePedidos />
+
+## Estime o tempo de processamento
+
+Use a média mensal de pedidos e meça quanto tempo sua equipe leva para processar um pedido completo.
+
+<SimuladorDePedidos pedidosPorMes={100} minutosPorPedido={6} />
+
+## Valide com pedidos de teste
+
+Confira um pedido completo e um incompleto antes de habilitar a automação. Reenvie o mesmo identificador para verificar que o fluxo registra o pedido uma única vez.
+
+[Conhecer o serviço de IA e automação](/solucoes/ia-e-automacao/)

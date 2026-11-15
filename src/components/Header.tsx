@@ -12,18 +12,18 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[--color-line] bg-[--color-canvas]/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-canvas/90 backdrop-blur">
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex flex-col leading-none">
           <span className="font-[family-name:--font-display] text-xl font-bold tracking-tight">
-            TUI <span className="text-[--color-brand]">Tecnologia</span>
+            TUI <span className="text-brand">Tecnologia</span>
           </span>
-          <span className="mt-0.5 text-[11px] uppercase tracking-widest text-[--color-ink-muted]">
+          <span className="mt-0.5 text-[11px] uppercase tracking-widest text-ink-muted">
             Consultoria e Gestão de TI
           </span>
         </Link>
 
-        <ul className="hidden items-center gap-7 md:flex">
+        <ul className="hidden items-center gap-7 lg:flex">
           {navegacao.map((item) => {
             const ativo =
               item.href === "/"
@@ -36,8 +36,8 @@ export function Header() {
                   className={cn(
                     "text-sm transition-colors",
                     ativo
-                      ? "text-[--color-brand-light]"
-                      : "text-[--color-ink-muted] hover:text-[--color-ink]",
+                      ? "text-brand-light"
+                      : "text-ink-muted hover:text-ink",
                   )}
                 >
                   {item.rotulo}
@@ -52,7 +52,7 @@ export function Header() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-lg bg-[--color-brand] px-4 py-2 text-sm font-semibold text-[#04122a] transition-colors hover:bg-[--color-brand-light]"
+              className="rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-[#04122a] transition-colors hover:bg-brand-light"
             >
               Falar com especialista
             </a>
@@ -62,7 +62,7 @@ export function Header() {
         <button
           type="button"
           onClick={() => setAberto((v) => !v)}
-          className="md:hidden"
+          className="lg:hidden"
           aria-label={aberto ? "Fechar menu" : "Abrir menu"}
           aria-expanded={aberto}
         >
@@ -71,13 +71,13 @@ export function Header() {
       </nav>
 
       {aberto && (
-        <ul className="border-t border-[--color-line] px-6 py-4 md:hidden">
+        <ul className="border-t border-line px-6 py-4 lg:hidden">
           {navegacao.map((item) => (
             <li key={item.href}>
               <Link
                 href={item.href}
                 onClick={() => setAberto(false)}
-                className="block py-2.5 text-sm text-[--color-ink-muted] hover:text-[--color-ink]"
+                className="block py-2.5 text-sm text-ink-muted hover:text-ink"
               >
                 {item.rotulo}
               </Link>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function SobrePage() {
   return (
     <>
-      <section className="border-b border-[--color-line]">
+      <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
           <h1 className="font-[family-name:--font-display] text-4xl font-bold tracking-tight sm:text-5xl">
             Sobre a TUI
@@ -20,7 +20,7 @@ export default function SobrePage() {
       </section>
 
       <section className="mx-auto max-w-3xl px-6 py-16 sm:py-20">
-        <div className="space-y-6 text-lg leading-relaxed text-[--color-ink-muted]">
+        <div className="space-y-6 text-lg leading-relaxed text-ink-muted">
           <p>
             A {site.nome} nasceu para resolver um problema comum na pequena e
             média empresa: tecnologia é essencial para operar, mas raramente
@@ -43,26 +43,26 @@ export default function SobrePage() {
           </p>
         </div>
 
-        <dl className="mt-14 grid gap-8 border-t border-[--color-line] pt-10 sm:grid-cols-3">
+        <dl className="mt-14 grid gap-8 border-t border-line pt-10 sm:grid-cols-3">
           <div>
-            <dt className="text-3xl font-bold text-[--color-brand]">6</dt>
-            <dd className="mt-1 text-sm text-[--color-ink-muted]">
+            <dt className="text-3xl font-bold text-brand">6</dt>
+            <dd className="mt-1 text-sm text-ink-muted">
               frentes de atuação
             </dd>
           </div>
           <div>
-            <dt className="text-3xl font-bold text-[--color-brand]">
+            <dt className="text-3xl font-bold text-brand">
               Autorizada
             </dt>
-            <dd className="mt-1 text-sm text-[--color-ink-muted]">
+            <dd className="mt-1 text-sm text-ink-muted">
               revenda oficial Kaspersky
             </dd>
           </div>
           <div>
-            <dt className="text-3xl font-bold text-[--color-brand]">
+            <dt className="text-3xl font-bold text-brand">
               {site.responsavel.split(" ")[0]}
             </dt>
-            <dd className="mt-1 text-sm text-[--color-ink-muted]">
+            <dd className="mt-1 text-sm text-ink-muted">
               atendimento direto com o responsável
             </dd>
           </div>
