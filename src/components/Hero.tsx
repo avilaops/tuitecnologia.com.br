@@ -34,6 +34,9 @@ export function Hero() {
               Agendar diagnóstico
               <ArrowRight size={16} />
             </Button>
+            <Button href="/solucoes/ia-e-automacao/" variante="secundario">
+              Simular automação
+            </Button>
             <Button
               href={whatsappUrl(
                 `Olá! Vim pelo site da ${site.nome} e quero falar sobre consultoria de TI.`,

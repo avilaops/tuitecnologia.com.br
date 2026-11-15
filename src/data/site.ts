@@ -32,5 +32,6 @@ export const navegacao = [
   { href: "/servicos/", rotulo: "Serviços" },
   { href: "/sobre/", rotulo: "Sobre" },
   { href: "/kaspersky/", rotulo: "Kaspersky" },
+  { href: "/ajuda/", rotulo: "Ajuda" },
   { href: "/contato/", rotulo: "Contato" },
 ] as const;

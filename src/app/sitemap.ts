@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/data/site";
 
+export const dynamic = "force-static";
+
 /**
  * Gerado a partir das rotas reais. No site antigo o sitemap.xml era escrito a
  * mao e ja tinha divergido: listava 8 URLs para 15 paginas publicadas.
@@ -12,6 +14,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { caminho: "/contato/", prioridade: 0.8 },
     { caminho: "/kaspersky/", prioridade: 0.7 },
     { caminho: "/sobre/", prioridade: 0.6 },
+    { caminho: "/solucoes/ia-e-automacao/", prioridade: 0.8 },
+    { caminho: "/ajuda/", prioridade: 0.6 },
+    { caminho: "/ajuda/automatizar-pedidos/", prioridade: 0.6 },
   ];
 
   return rotas.map(({ caminho, prioridade }) => ({

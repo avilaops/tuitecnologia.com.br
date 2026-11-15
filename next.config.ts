@@ -1,8 +1,8 @@
 import type { NextConfig } from "next";
+import createMDX from "@next/mdx";
 
 // Site institucional: todo o conteudo e conhecido no build, nao ha rota de API
-// nem sessao. `export` gera HTML estatico servido pelo Caddy no Hetzner — mais
-// leve que manter um processo Node vivo so para entregar pagina pronta.
+// nem sessao. Cloudflare Pages publica o HTML estático da pasta out/.
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
@@ -10,12 +10,10 @@ const nextConfig: NextConfig = {
     // `export` nao roda o otimizador de imagem (ele depende de servidor).
     unoptimized: true,
   },
-  eslint: {
-    ignoreDuringBuilds: false,
-  },
+  pageExtensions: ["ts", "tsx", "js", "jsx", "mdx"],
   typescript: {
     ignoreBuildErrors: false,
   },
 };
 
-export default nextConfig;
+export default createMDX({})(nextConfig);
