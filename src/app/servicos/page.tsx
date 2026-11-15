@@ -13,12 +13,12 @@ export const metadata: Metadata = {
 export default function ServicosPage() {
   return (
     <>
-      <section className="border-b border-[--color-line]">
+      <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
           <h1 className="font-[family-name:--font-display] text-4xl font-bold tracking-tight sm:text-5xl">
             Serviços
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-[--color-ink-muted]">
+          <p className="mt-4 max-w-2xl text-lg text-ink-muted">
             Da decisão estratégica à execução técnica — com uma equipe só,
             respondendo por tudo.
           </p>

@@ -9,7 +9,7 @@ export function Servicos() {
         <h2 className="font-[family-name:--font-display] text-3xl font-bold tracking-tight sm:text-4xl">
           O que a TUI resolve
         </h2>
-        <p className="mt-4 text-[--color-ink-muted]">
+        <p className="mt-4 text-ink-muted">
           Consultoria é o centro do trabalho. As outras frentes existem para
           executar o que o diagnóstico apontar.
         </p>
@@ -25,8 +25,8 @@ export function Servicos() {
               className={cn(
                 "scroll-mt-24 rounded-2xl border p-7 transition-colors",
                 servico.destaque
-                  ? "border-[--color-brand]/40 bg-[--color-surface-2]"
-                  : "border-[--color-line] bg-[--color-surface] hover:border-[--color-line-strong]",
+                  ? "border-brand/40 bg-surface-2"
+                  : "border-line bg-surface hover:border-line-strong",
               )}
             >
               <div className="flex items-center gap-3">
@@ -34,8 +34,8 @@ export function Servicos() {
                   className={cn(
                     "grid size-10 place-items-center rounded-xl",
                     servico.destaque
-                      ? "bg-[--color-brand] text-[#04122a]"
-                      : "bg-[--color-brand]/10 text-[--color-brand-light]",
+                      ? "bg-brand text-[#04122a]"
+                      : "bg-brand/10 text-brand-light",
                   )}
                 >
                   <Icone size={19} />
@@ -43,7 +43,7 @@ export function Servicos() {
                 <h3 className="font-semibold leading-tight">{servico.titulo}</h3>
               </div>
 
-              <p className="mt-4 text-sm leading-relaxed text-[--color-ink-muted]">
+              <p className="mt-4 text-sm leading-relaxed text-ink-muted">
                 {servico.resumo}
               </p>
 
@@ -52,9 +52,9 @@ export function Servicos() {
                   <li key={item} className="flex items-start gap-2.5 text-sm">
                     <Check
                       size={15}
-                      className="mt-0.5 shrink-0 text-[--color-brand]"
+                      className="mt-0.5 shrink-0 text-brand"
                     />
-                    <span className="text-[--color-ink-muted]">{item}</span>
+                    <span className="text-ink-muted">{item}</span>
                   </li>
                 ))}
               </ul>

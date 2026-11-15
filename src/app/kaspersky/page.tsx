@@ -16,16 +16,16 @@ export const metadata: Metadata = {
 export default function KasperskyPage() {
   return (
     <>
-      <section className="border-b border-[--color-line]">
+      <section className="border-b border-line">
         <div className="mx-auto max-w-6xl px-6 py-16 sm:py-20">
-          <p className="inline-flex items-center gap-2 rounded-full border border-[--color-line-strong] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[--color-brand-light]">
+          <p className="inline-flex items-center gap-2 rounded-full border border-line-strong px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-light">
             <BadgeCheck size={14} />
             Revenda autorizada
           </p>
           <h1 className="mt-6 font-[family-name:--font-display] text-4xl font-bold tracking-tight sm:text-5xl">
             Licenças Kaspersky
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-[--color-ink-muted]">
+          <p className="mt-4 max-w-2xl text-lg text-ink-muted">
             Licenças originais, com nota fiscal e instalação orientada. Para
             clientes de consultoria, o licenciamento entra junto do contrato de
             gestão.
@@ -41,31 +41,31 @@ export default function KasperskyPage() {
               className={cn(
                 "flex flex-col rounded-2xl border p-7",
                 produto.popular
-                  ? "border-[--color-brand] bg-[--color-surface-2]"
-                  : "border-[--color-line] bg-[--color-surface]",
+                  ? "border-brand bg-surface-2"
+                  : "border-line bg-surface",
               )}
             >
               {produto.popular && (
-                <span className="mb-3 w-fit rounded-full bg-[--color-brand] px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-[#04122a]">
+                <span className="mb-3 w-fit rounded-full bg-brand px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-widest text-[#04122a]">
                   Mais vendido
                 </span>
               )}
               <h2 className="font-semibold leading-tight">{produto.nome}</h2>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-[--color-ink-muted]">
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">
                 {produto.descricao}
               </p>
 
               <div className="mt-6">
-                <p className="text-xs text-[--color-ink-muted] line-through">
+                <p className="text-xs text-ink-muted line-through">
                   {formatarBRL(produto.precoDe)}
                 </p>
                 <p className="text-2xl font-bold tracking-tight">
                   {formatarBRL(produto.precoPor)}
-                  <span className="ml-1 text-sm font-normal text-[--color-ink-muted]">
+                  <span className="ml-1 text-sm font-normal text-ink-muted">
                     /ano
                   </span>
                 </p>
-                <p className="mt-1 text-xs text-[--color-ink-muted]">
+                <p className="mt-1 text-xs text-ink-muted">
                   Renovação: {produto.renovacao}
                 </p>
               </div>
@@ -84,13 +84,13 @@ export default function KasperskyPage() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-[--color-ink-muted]">
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm text-ink-muted">
           <span>Formas de pagamento:</span>
           {formasDePagamento.map((forma, i) => (
             <span key={forma.nome} className="flex items-center gap-3">
               {i > 0 && <span aria-hidden="true">·</span>}
               <span>
-                <strong className="font-semibold text-[--color-ink]">
+                <strong className="font-semibold text-ink">
                   {forma.nome}
                 </strong>{" "}
                 <span className="text-xs">({forma.detalhe})</span>
