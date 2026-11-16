@@ -15,12 +15,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
       # O site no ar é o HTML estático da raiz; src/ (Next.js) ainda não é publicado.
       - name: Separa os arquivos publicados
         run: |
           mkdir _site
-          cp *.html *.xml *.txt *.png manifest.json CNAME _site/
+          cp *.html *.xml *.txt *.png favicon.svg manifest.json _site/
           cp -r css js _site/
+          rm _site/INTEGRACOES.html
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 22
@@ -28,7 +31,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           repository: avilaops/motor-web
-          ref: d5067bbbe3522f459367af3b58b4298324801f82
+          ref: a1bba366c848bf2df3634cba6de2649a8626435c
           path: .publicacao-texto
           persist-credentials: false
       - name: Instalar publicador de texto
@@ -36,16 +39,16 @@ jobs:
         run: npm ci --ignore-scripts --omit=dev
       - name: Gerar Markdown e MDX do HTML publicado
         run: |
-          # Restrições da exportação textual; o HTML original permanece igual.
           cat > _site/_headers <<'HEADERS'
-          /INTEGRACOES.html
-            X-Robots-Tag: noindex
-          /comparador.html
-            X-Robots-Tag: noindex
+          /carrinho
+            X-Robots-Tag: noindex,nofollow
+          /obrigado
+            X-Robots-Tag: noindex,nofollow
           HEADERS
-          node .publicacao-texto/bin/publicar-texto.mjs --diretorio _site --origem https://tuitecnologia.com.br
+          node .publicacao-texto/bin/publicar-seo.mjs --diretorio _site --configuracao seo.config.json --repositorio .
+          node .publicacao-texto/bin/publicar-texto.mjs --diretorio _site --origem https://tuitecnologia.com.br --indexar-texto
       - name: Generate public discovery and WebMCP
-        run: node .publicacao-texto/bin/publicar-descoberta.mjs --diretorio _site --origem https://tuitecnologia.com.br --excluir-prefixo /carrinho.html --excluir-prefixo /comparador.html --excluir-prefixo /obrigado.html --excluir-prefixo /INTEGRACOES.html
+        run: node .publicacao-texto/bin/publicar-descoberta.mjs --diretorio _site --origem https://tuitecnologia.com.br --excluir-prefixo /carrinho.html --excluir-prefixo /obrigado.html --excluir-prefixo /INTEGRACOES.html
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: cloudflare-pages-site
