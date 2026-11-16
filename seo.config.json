@@ -1,0 +1,16 @@
+{
+  "origem": "https://tuitecnologia.com.br",
+  "nome": "TUI Tecnologia",
+  "idioma": "pt-BR",
+  "imagem": "/og-default.png",
+  "icone": "/favicon.svg",
+  "removerTagsLegadas": true,
+  "fontesGlobais": [
+    "seo.config.json"
+  ],
+  "excluirRotas": [
+    "/carrinho",
+    "/obrigado",
+    "/INTEGRACOES"
+  ]
+}
