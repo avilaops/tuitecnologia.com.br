@@ -1,4 +1,4 @@
-name: GitHub Pages
+name: Cloudflare Pages
 on:
   push:
     branches: [main]
@@ -46,20 +46,14 @@ jobs:
           node .publicacao-texto/bin/publicar-texto.mjs --diretorio _site --origem https://tuitecnologia.com.br
       - name: Generate public discovery and WebMCP
         run: node .publicacao-texto/bin/publicar-descoberta.mjs --diretorio _site --origem https://tuitecnologia.com.br --excluir-prefixo /carrinho.html --excluir-prefixo /comparador.html --excluir-prefixo /obrigado.html --excluir-prefixo /INTEGRACOES.html
-      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
+          name: cloudflare-pages-site
           path: _site
           include-hidden-files: true
-  deploy:
-    needs: build
-    if: github.event_name != 'pull_request'
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Publicar no Cloudflare Pages
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          CLOUDFLARE_ACCOUNT_ID: 85b914dcdebf6fa2fce7b819bc542294
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: npx --yes --package=wrangler@4.161.0 wrangler pages deploy _site --project-name=tui-tecnologia --branch=main --commit-hash=${{ github.sha }}
